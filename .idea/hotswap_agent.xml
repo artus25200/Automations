@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HotSwapAgentPluginSettingsProvider">
+    <option name="agentPath" value="/Library/Java/JavaVirtualMachines/jbr-dcevm-17.jdk/Contents/Home/lib/hotswap/hotswap-agent.jar" />
+    <option name="enableAgentForAllConfiguration" value="true" />
+  </component>
+</project>

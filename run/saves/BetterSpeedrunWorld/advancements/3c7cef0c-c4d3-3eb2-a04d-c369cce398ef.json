@@ -1,0 +1,35 @@
+{
+  "minecraft:recipes/food/cooked_porkchop_from_campfire_cooking": {
+    "criteria": {
+      "has_porkchop": "2022-12-18 18:48:39 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_porkchop_from_smoking": {
+    "criteria": {
+      "has_porkchop": "2022-12-18 18:48:39 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2022-12-18 18:48:38 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_porkchop": {
+    "criteria": {
+      "has_porkchop": "2022-12-18 18:48:39 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:snowy_slopes": "2022-12-18 18:48:24 +0100",
+      "minecraft:jagged_peaks": "2022-12-18 18:48:29 +0100",
+      "minecraft:plains": "2022-12-18 18:47:48 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

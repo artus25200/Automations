@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PackageSearchGradleConfiguration">
+    <option name="GRADLE_SCOPES" value="api,implementation,testImplementation,annotationProcessor,kapt,compileOnly" />
+  </component>
+</project>

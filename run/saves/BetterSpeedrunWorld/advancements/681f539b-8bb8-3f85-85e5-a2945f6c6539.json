@@ -1,0 +1,29 @@
+{
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2022-12-18 16:42:04 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:creeper": "2022-12-18 16:42:04 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:creeper": "2022-12-18 16:42:04 +0100"
+    },
+    "done": false
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:sunflower_plains": "2022-12-18 16:42:54 +0100",
+      "minecraft:river": "2022-12-18 17:09:05 +0100",
+      "minecraft:plains": "2022-12-18 16:40:10 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

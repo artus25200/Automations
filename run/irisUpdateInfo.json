@@ -1,0 +1,9 @@
+{
+  "semanticVersion": "1.4.5",
+  "updateInfo": {
+    "en_us": "Iris 1.4.5 has released, with support for 1.19.3 and bug fixes. Download it at: {link}"
+  },
+  "modHost": "Modrinth",
+  "modDownload": "https://modrinth.com/mod/iris",
+  "installer": "https://irisshaders.net"
+}
