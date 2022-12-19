@@ -29,8 +29,6 @@ public class AutomationsServer {
 	public static NodeWrapper nodeWrapper;
 
 	public static void onInitializeServer() {
-		nodeWrapper = new NodeWrapper();
-
 		ModNetworking.RegisterC2SPackets();
 
 		configDir = FabricLoader.getInstance().getConfigDir().resolve(Automations.MOD_ID);
@@ -56,9 +54,11 @@ public class AutomationsServer {
 				Files.createFile(nodeFile);
 				ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(nodeFile.toFile()));
 				os.writeObject(new NodeWrapper());
+				os.close();
 			}
 			ObjectInputStream is = new ObjectInputStream(new FileInputStream(nodeFile.toFile()));
 			nodeWrapper = (NodeWrapper) is.readObject();
+			is.close();
 		}
 		catch(IOException | ClassNotFoundException e){
 			throw new RuntimeException(e);
@@ -67,7 +67,9 @@ public class AutomationsServer {
 
 	public static void writeNodesToFile() {
 		try {
-			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("nodes"));
+			Path nodeFile = configDir.resolve("nodes");
+			if(Files.exists(nodeFile)) Files.delete(nodeFile);
+			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(nodeFile.toFile()));
 			os.writeObject(nodeWrapper);
 		}
 		catch(IOException e){

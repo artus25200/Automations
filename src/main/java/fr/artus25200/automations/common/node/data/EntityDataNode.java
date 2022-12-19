@@ -27,7 +27,6 @@ public class EntityDataNode extends DataNode{
 
 	@Override
 	public boolean onExecute() {
-		System.out.println("called");
 		Entity entity = ((EntityList)this.inputs.get(0).getValue()).entities[0];
 
 		this.outputs.get(0).value = entity.getName();
