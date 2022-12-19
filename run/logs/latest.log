@@ -213,3 +213,7 @@ java.io.IOException: Could not retrieve profile key pair
 [15:38:58] [Server thread/INFO] (Minecraft) [STDOUT]: called
 [15:38:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
 [15:38:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493
+[15:51:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Saved screenshot as 2022-12-19_15.51.09.png
+[15:54:19] [Render thread/ERROR] (Minecraft) ########## GL ERROR ##########
+[15:54:19] [Render thread/ERROR] (Minecraft) @ Render
+[15:54:19] [Render thread/ERROR] (Minecraft) 65540: Invalid scancode -1

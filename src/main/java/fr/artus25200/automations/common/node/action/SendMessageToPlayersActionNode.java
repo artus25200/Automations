@@ -30,7 +30,7 @@ public class SendMessageToPlayersActionNode extends ActionNode{
 
 	@Override
 	public String getName() {
-		return "Send Message to Player(s)";
+		return "Send Chat Message";
 	}
 
 	@Override

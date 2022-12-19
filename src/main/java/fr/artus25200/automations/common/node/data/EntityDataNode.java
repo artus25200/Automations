@@ -39,7 +39,7 @@ public class EntityDataNode extends DataNode{
 
 	@Override
 	public String getName() {
-		return "Entity Data Extractor";
+		return "Entity Data";
 	}
 
 	@Override

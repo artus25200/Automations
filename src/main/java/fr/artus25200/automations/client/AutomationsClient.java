@@ -54,9 +54,9 @@ public class AutomationsClient implements ClientModInitializer {
 
 	private static void test(){
 		keyBinding = (StickyKeyBinding) KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
-				"none",
+				"node_editor",
 				GLFW.GLFW_KEY_M,
-				"none",
+				"Automations",
 				() -> true
 		));
 
