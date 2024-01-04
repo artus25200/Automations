@@ -8,9 +8,15 @@ import net.minecraft.entity.Entity;
 import java.util.List;
 
 public class KillEntityActionNode extends ActionNode{
-
-    public KillEntityActionNode() {
+    @Override
+    public void setInputs() {
+        super.setInputs();
         this.inputs.add(new Input(this, "Entity(s)", EntityList.class));
+    }
+
+    @Override
+    public void setOutputs() {
+        super.setOutputs();
     }
 
     @Override

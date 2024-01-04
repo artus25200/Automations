@@ -37,7 +37,8 @@ public class InputWidget implements Drawable, Selectable, Element, Serializable,
 		int color = isMouseOver(mouseX, mouseY) ? darkenColor(this.input.color, 50) : this.input.color;
 
 		DrawableHelper.fill(matrices, x, y, x+5, y+5, color);
-		getTr().draw(matrices, input.name, x + 2 + 5, y, 0xFFFFFFFF);
+		int textColor = this.input.isConnected() ? 0xFFFFFFFF : 0xFFFF0000;
+		getTr().draw(matrices, input.name, x + 2 + 5, y, textColor);
 	}
 
 	@Override

@@ -4,8 +4,7 @@
 
 package fr.artus25200.automations.common.networking;
 
-import fr.artus25200.automations.common.Automations;
-import fr.artus25200.automations.common.NodeWrapper;
+import fr.artus25200.automations.common.NodeList;
 import fr.artus25200.automations.server.AutomationsServer;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.network.PacketByteBuf;
@@ -24,7 +23,7 @@ public class NodeListC2SPacket {
 			byte[] array = buf.readByteArray();
 			ByteArrayInputStream inputStream = new ByteArrayInputStream(array);
 			ObjectInputStream is = new ObjectInputStream(inputStream);
-			AutomationsServer.nodeWrapper = (NodeWrapper) is.readObject();
+			AutomationsServer.nodeList = (NodeList) is.readObject();
 			is.close();
 		} catch (IOException | ClassNotFoundException e){
 			throw new RuntimeException(e);

@@ -5,7 +5,7 @@
 package fr.artus25200.automations.common.networking;
 
 import fr.artus25200.automations.client.AutomationsClient;
-import fr.artus25200.automations.common.NodeWrapper;
+import fr.artus25200.automations.common.NodeList;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
@@ -22,7 +22,7 @@ public class NodeListS2CPacket {
 			byte[] array = buf.readByteArray();
 			ByteArrayInputStream array2 = new ByteArrayInputStream(array);
 			ObjectInputStream is = new ObjectInputStream(array2);
-			AutomationsClient.nodeWrapper = (NodeWrapper) is.readObject();
+			AutomationsClient.nodeList = (NodeList) is.readObject();
 			is.close();
 			received = true;
 		}

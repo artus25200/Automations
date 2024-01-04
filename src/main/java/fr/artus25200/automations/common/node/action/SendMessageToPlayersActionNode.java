@@ -15,15 +15,22 @@ import java.util.List;
 
 public class SendMessageToPlayersActionNode extends ActionNode{
 
-	public SendMessageToPlayersActionNode(){
+	@Override
+	public void setInputs() {
+		super.setInputs();
 		this.inputs.add(new Input(this, "Player(s)", EntityList.class));
 		this.inputs.add(new Input(this, "String", String.class));
 	}
 
 	@Override
+	public void setOutputs() {
+		super.setOutputs();
+	}
+
+	@Override
 	public boolean onExecute() {
 		for(Entity player : ((EntityList)this.inputs.get(1).getValue()).entities){
-			((ServerPlayerEntity)player).sendMessageToClient((Text)this.inputs.get(2).getValue(), false);
+			((ServerPlayerEntity)player).sendMessage(Text.literal((String) this.inputs.get(2).getValue()));
 		}
 		return true;
 	}

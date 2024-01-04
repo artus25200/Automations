@@ -6,13 +6,14 @@ import fr.artus25200.automations.common.node.data.DataNode;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public abstract class Node implements Serializable, Cloneable {
+public abstract class Node implements Serializable {
     public List<Input> inputs = new ArrayList<>();
     public List<Output> outputs = new ArrayList<>();
 
     public Node() {
+        this.setInputs();
+        this.setOutputs();
     }
 
     public boolean Execute() {
@@ -27,8 +28,12 @@ public abstract class Node implements Serializable, Cloneable {
     }
 
     public void delete(){
-        AutomationsClient.nodeWrapper.nodes.remove(this);
+        AutomationsClient.nodeList.nodes.remove(this);
     }
+
+    public abstract void setInputs();
+
+    public abstract void setOutputs();
 
     public abstract boolean onExecute();
 
@@ -37,14 +42,5 @@ public abstract class Node implements Serializable, Cloneable {
     public abstract int getColor();
 
     public abstract Nodes.NodeCategory[] getCategories();
-
-    @Override
-    public Node clone() {
-        try {
-            return (Node) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
-    }
 }
 

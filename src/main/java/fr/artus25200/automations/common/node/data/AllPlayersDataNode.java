@@ -13,7 +13,12 @@ import net.minecraft.entity.Entity;
 import java.util.Objects;
 
 public class AllPlayersDataNode extends DataNode{
-	public AllPlayersDataNode(){
+	@Override
+	public void setInputs() {
+	}
+
+	@Override
+	public void setOutputs() {
 		this.outputs.add(new Output(this, "Players", EntityList.class));
 	}
 

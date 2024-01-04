@@ -12,17 +12,20 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.List;
-
 public class BlockBreakEventNode extends EventNode{
 
     public BlockBreakEventNode() {
         super();
+        AutomationsClient.nodeList.blockBreakEvents.add(this);
+    }
+
+    @Override
+    public void setOutputs() {
+        super.setOutputs();
         this.outputs.add(new Output(this, "World", World.class));
         this.outputs.add(new Output(this, "BlockPos", BlockPos.class));
         this.outputs.add(new Output(this, "BlockState", BlockState.class));
         this.outputs.add(new Output(this, "Player", EntityList.class));
-        AutomationsClient.nodeWrapper.blockBreakEvents.add(this);
     }
 
     public void Execute(World world, BlockPos pos, BlockState state, PlayerEntity player) {
@@ -47,7 +50,7 @@ public class BlockBreakEventNode extends EventNode{
     public void registerEvent() {
         PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, ci) -> {
             Automations.LOGGER.info("Block broken : " + state.getBlock().getName().toString());
-            for(BlockBreakEventNode e : AutomationsServer.nodeWrapper.blockBreakEvents){
+            for(BlockBreakEventNode e : AutomationsServer.nodeList.blockBreakEvents){
                 e.Execute(world, pos, state, player);
             }
         });

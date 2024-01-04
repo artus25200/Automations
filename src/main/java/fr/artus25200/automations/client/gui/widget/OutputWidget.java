@@ -25,6 +25,8 @@ import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
 @Environment(EnvType.CLIENT)
 public class OutputWidget implements Drawable, Selectable, Element, Serializable, RightClickable {
+	public static final int widthANDheight = 5;
+
 	public Output output;
 	public NodeWidget parent;
 	public HashMap<Connection, ConnectionWidget> connections = new HashMap<>();
@@ -40,23 +42,29 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 			this.connections.put(c, new ConnectionWidget(c));
 		}
 
-		AutomationsClient.nodeWrapper.connections.putAll(connections);
+		AutomationsClient.nodeList.connections.putAll(connections);
 	}
 
 	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
 		int color = isMouseOver(mouseX,mouseY) ? darkenColor(this.output.color, 50) : this.output.color;
 
-		DrawableHelper.fill(matrices, this.x, this.y, this.x + 5, this.y + 5, color);
-		getTr().draw(matrices, output.name, this.x - getTr().getWidth(output.name) - 5, y, 0xFFFFFFFF);
+		DrawableHelper.fill(matrices, this.x, this.y, this.x + widthANDheight, this.y + widthANDheight, color);
+		if(!(parent instanceof EditableDataNodeWidget)){
+			getTr().draw(matrices, output.name, this.x - getTr().getWidth(output.name) - 5, y, 0xFFFFFFFF);
+		}
 
 		for (ConnectionWidget cw : connections.values()){
 			cw.render(matrices, mouseX, mouseY, delta);
+		}
+
+		if(this.dragging){
+			ConnectionWidget.drawLine(3, this.x+4, this.y+4, mouseX, mouseY, this.output.color);
 		}
 	}
 
 	@Override
 	public boolean isMouseOver(double mouseX, double mouseY) {
-		return mouseX >= this.x && mouseX <= this.x+5 && mouseY >= this.y && mouseY <= this.y + 5;
+		return mouseX >= this.x && mouseX <= this.x+widthANDheight && mouseY >= this.y && mouseY <= this.y + widthANDheight;
 	}
 
 	@Override
@@ -73,7 +81,7 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 		if(!this.dragging) return true;
 		this.dragging = false;
 		loop:
-		for (NodeWidget nodeWidget : AutomationsClient.nodeWrapper.nodes.values()) {
+		for (NodeWidget nodeWidget : AutomationsClient.nodeList.nodes.values()) {
 			for (InputWidget inputWidget : nodeWidget.inputs.values()) {
 				if (this.output.getType() == null) continue;
 				if (inputWidget.isMouseOver(mouseX, mouseY) && inputWidget.input.getType().isAssignableFrom(this.output.getType())) {
@@ -84,6 +92,8 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 		}
 		return true;
 	}
+
+
 
 	@Override
 	public SelectionType getType() {

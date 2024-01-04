@@ -1,23 +1,16 @@
-[15:35:44] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.2 with Fabric Loader 0.14.9
-[15:35:45] [main/INFO] (FabricLoader) Loading 85 mods:
-	- automations 1.0.0
-	- capes 1.4.4+1.19
-	- chunky 1.2.218
-	- com_logisticscraft_occlusionculling 0.0.6-SNAPSHOT via entityculling
-	- cullleaves 2.3.4
-	- dark-loading-screen 1.6.12
-	- entityculling 1.5.2-mc1.19
-	- fabric-api 0.66.0+1.19.2
+[18:19:22] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.2 with Fabric Loader 0.14.9
+[18:19:23] [main/INFO] (FabricLoader) Loading 65 mods:
+	- automations 0.1.0+1.19.2
+	- cloth-basic-math 0.6.1 via cloth-config
+	- cloth-config 8.2.88
+	- com_velocitypowered_velocity-native 3.1.2-SNAPSHOT via krypton
+	- fabric-api 0.61.0+1.19.2
 	- fabric-api-base 0.4.11+e62f51a390
 	- fabric-api-lookup-api-v1 1.6.9+9ff28f4090
 	- fabric-biome-api-v1 9.0.17+aeb40ebe90
-	- fabric-block-api-v1 1.0.0+12bfe4ea90 via fabric-api
 	- fabric-blockrenderlayer-v1 1.1.20+aeb40ebe90
 	- fabric-client-tags-api-v1 1.0.1+b35fea8390
-	- fabric-command-api-v1 1.2.12+f71b366f90 via fabric-api
 	- fabric-command-api-v2 2.1.7+0c17ea9690
-	- fabric-commands-v0 0.2.29+df3654b390 via fabric-api
-	- fabric-containers-v0 0.1.35+df3654b390 via fabric-api
 	- fabric-content-registries-v0 3.3.0+624e468e90
 	- fabric-convention-tags-v1 1.1.1+7cd20a1490
 	- fabric-crash-report-info-v1 0.2.5+aeb40ebe90
@@ -25,100 +18,93 @@
 	- fabric-dimensions-v1 2.1.31+0dd10df690
 	- fabric-entity-events-v1 1.4.18+9ff28f4090
 	- fabric-events-interaction-v0 0.4.28+aeb40ebe90
-	- fabric-events-lifecycle-v0 0.2.29+df3654b390 via fabric-api
 	- fabric-game-rule-api-v1 1.0.21+aeb40ebe90
 	- fabric-gametest-api-v1 1.0.35+e62f51a390
 	- fabric-item-api-v1 1.5.7+35a03c4390
 	- fabric-item-groups-v0 0.3.29+4e8ca3fd90
 	- fabric-key-binding-api-v1 1.0.20+aeb40ebe90
-	- fabric-keybindings-v0 0.2.20+df3654b390 via fabric-api
-	- fabric-language-kotlin 1.8.1+kotlin.1.7.0
+	- fabric-language-kotlin 1.8.3+kotlin.1.7.10
 	- fabric-lifecycle-events-v1 2.1.2+aeb40ebe90
 	- fabric-loot-api-v2 1.1.3+83a8659290
-	- fabric-loot-tables-v1 1.1.10+9e7660c690 via fabric-api
 	- fabric-message-api-v1 5.0.3+176380a290
 	- fabric-mining-level-api-v1 2.1.14+33fbc73890
 	- fabric-models-v0 0.3.17+aeb40ebe90
 	- fabric-networking-api-v1 1.2.4+5eb68ef290
-	- fabric-networking-v0 0.3.22+df3654b390 via fabric-api
 	- fabric-object-builder-api-v1 4.0.11+aeb40ebe90
 	- fabric-particles-v1 1.0.10+aeb40ebe90
 	- fabric-registry-sync-v0 0.9.25+726b652090
 	- fabric-renderer-api-v1 1.0.10+aeb40ebe90
 	- fabric-renderer-indigo 0.6.12+aeb40ebe90
-	- fabric-renderer-registries-v1 3.2.21+df3654b390 via fabric-api
 	- fabric-rendering-data-attachment-v1 0.3.14+aeb40ebe90
 	- fabric-rendering-fluids-v1 3.0.7+aeb40ebe90
-	- fabric-rendering-v0 1.1.23+df3654b390 via fabric-api
 	- fabric-rendering-v1 1.10.16+aeb40ebe90
 	- fabric-resource-conditions-api-v1 2.0.11+e62f51a390
 	- fabric-resource-loader-v0 0.6.1+aeb40ebe90
 	- fabric-screen-api-v1 1.0.26+f05effaf90
 	- fabric-screen-handler-api-v1 1.3.0+1cc24b1b90
-	- fabric-sound-api-v1 1.0.0+c4f28df590 via fabric-api
 	- fabric-textures-v0 1.0.20+aeb40ebe90
 	- fabric-transfer-api-v1 2.1.0+8f88597390
 	- fabric-transitive-access-wideners-v1 1.3.0+42d99c3290
 	- fabricloader 0.14.9
 	- ferritecore 4.2.1
-	- iris 1.2.5
 	- java 17
+	- krypton 0.2.1
 	- ksyxis 1.1
 	- lazydfu 0.1.3
-	- midnightlib 0.5.2 via cullleaves
 	- minecraft 1.19.2
-	- notenoughcrashes 4.1.6+1.19
-	- omega-config 1.2.3-1.18.1 via capes
-	- org_anarres_jcpp 1.4.14 via iris
-	- org_jetbrains_kotlin_kotlin-reflect 1.7.0 via fabric-language-kotlin
-	- org_jetbrains_kotlin_kotlin-stdlib 1.7.0 via fabric-language-kotlin
-	- org_jetbrains_kotlin_kotlin-stdlib-jdk7 1.7.0 via fabric-language-kotlin
-	- org_jetbrains_kotlin_kotlin-stdlib-jdk8 1.7.0 via fabric-language-kotlin
-	- org_jetbrains_kotlinx_atomicfu-jvm 0.18.0 via fabric-language-kotlin
-	- org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm 1.6.3 via fabric-language-kotlin
-	- org_jetbrains_kotlinx_kotlinx-coroutines-jdk8 1.6.3 via fabric-language-kotlin
+	- notenoughcrashes 5.0.0+1.19.2
+	- org_jetbrains_kotlin_kotlin-reflect 1.7.10 via fabric-language-kotlin
+	- org_jetbrains_kotlin_kotlin-stdlib 1.7.10 via fabric-language-kotlin
+	- org_jetbrains_kotlin_kotlin-stdlib-jdk7 1.7.10 via fabric-language-kotlin
+	- org_jetbrains_kotlin_kotlin-stdlib-jdk8 1.7.10 via fabric-language-kotlin
+	- org_jetbrains_kotlinx_atomicfu-jvm 0.18.3 via fabric-language-kotlin
+	- org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm 1.6.4 via fabric-language-kotlin
+	- org_jetbrains_kotlinx_kotlinx-coroutines-jdk8 1.6.4 via fabric-language-kotlin
 	- org_jetbrains_kotlinx_kotlinx-datetime-jvm 0.4.0 via fabric-language-kotlin
-	- org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm 1.3.3 via fabric-language-kotlin
-	- org_jetbrains_kotlinx_kotlinx-serialization-core-jvm 1.3.3 via fabric-language-kotlin
-	- org_jetbrains_kotlinx_kotlinx-serialization-json-jvm 1.3.3 via fabric-language-kotlin
-	- org_joml_joml 1.10.4 via sodium
+	- org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm 1.4.0 via fabric-language-kotlin
+	- org_jetbrains_kotlinx_kotlinx-serialization-core-jvm 1.4.0 via fabric-language-kotlin
+	- org_jetbrains_kotlinx_kotlinx-serialization-json-jvm 1.4.0 via fabric-language-kotlin
 	- smoothboot 1.19-1.7.1
-	- sodium 0.4.2+build.16
-	- starlight 1.1.1+fabric.ae22326
-[15:35:58] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/Users/frederic.noury/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.4+mixin.0.8.5/c1dc27696aa4006e492c2485c9ccbcb26045a971/sponge-mixin-0.11.4+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[15:35:58] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
-[15:35:59] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[15:35:59] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[15:35:59] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[15:35:59] [main/INFO] (Sodium) Loaded configuration file for Sodium: 29 options available, 1 override(s) found
-[15:36:00] [main/WARN] (Sodium) Force-disabling mixin 'features.sky.MixinWorldRenderer' as rule 'mixin.features.sky' (added by mods [iris]) disables it and children
-[15:36:01] [main/INFO] (Smooth Boot) Smooth Boot config initialized
-[15:36:02] [main/WARN] (FileUtil) Configuration conflict: there is more than one oshi.properties file on the classpath
-[15:36:03] [main/WARN] (FileUtil) Configuration conflict: there is more than one oshi.architecture.properties file on the classpath
-[15:36:05] [main/WARN] (FabricLoader/Mixin) Method overwrite conflict for isSideInvisible in sodium.mixins.json:features.render_layer.leaves.MixinLeavesBlock from mod sodium, previously written by eu.midnightdust.cullleaves.mixin.MixinLeavesBlock. Skipping method.
-[15:36:10] [main/INFO] (Minecraft) Building unoptimized datafixer
-[15:36:17] [Render thread/WARN] (FabricLoader/Mixin) Method overwrite conflict for quad in sodium.mixins.json:features.buffer_builder.intrinsics.MixinBufferBuilder from mod sodium, previously written by net.coderbot.iris.mixin.vertices.block_rendering.MixinBufferBuilder_SeparateAo. Skipping method.
-[15:36:17] [Render thread/WARN] (FabricLoader/Mixin) Error loading class: org/quiltmc/loader/impl/entrypoint/minecraft/hooks/EntrypointClient (java.lang.ClassNotFoundException: org/quiltmc/loader/impl/entrypoint/minecraft/hooks/EntrypointClient)
-[15:36:18] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[15:36:18] [Render thread/INFO] (fabric-screen-api-v1) [Iris] Suppressing Yggdrasil authentication check because this is a development environment
-[15:36:18] [Render thread/INFO] (fabric-screen-api-v1) Setting user: Player493
-[15:36:18] [Render thread/WARN] (Ksyxis) Ksyxis will speedup your world loading. :P
-[15:36:18] [Render thread/WARN] (Ksyxis) BUT IT MAY CAUSE ISSUES (INCLUDING COMPAT). DON'T ASK OTHER MODS' AUTHORS FOR COMPAT!
-[15:36:18] [Render thread/INFO] (automations) Initializing Automations 0.1.0 alpha
-[15:36:18] [Render thread/INFO] (Indigo) [Indigo] Different rendering plugin detected; not applying Indigo.
-[15:36:20] [ForkJoinPool.commonPool-worker-1/WARN] (Iris) [Iris Update Check] Cached update file detected, using that!
-[15:36:20] [ForkJoinPool.commonPool-worker-1/WARN] (Iris) [Iris Update Check] New update detected, showing update message!
-[15:36:20] [Render thread/INFO] (fabric-screen-api-v1) Backend library: LWJGL version 3.3.1 SNAPSHOT
-[15:36:21] [Render thread/INFO] (Iris) Debug functionality is disabled.
-[15:36:21] [Render thread/INFO] (Iris) Shaders are disabled because enableShaders is set to false in iris.properties
-[15:36:21] [Render thread/INFO] (Iris) Shaders are disabled
-[15:36:21] [Render thread/WARN] (FabricLoader/Mixin) @Inject(@At("INVOKE")) Shift.BY=2 on mixins.iris.json:texture.MixinAbstractTexture from mod iris::handler$zgb000$iris$afterGenerateId exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
-[15:36:21] [Render thread/WARN] (FabricLoader/Mixin) Static binding violation: PRIVATE @Overwrite method renderBakedItemModel in sodium.mixins.json:features.item.MixinItemRenderer from mod sodium cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
-[15:36:22] [Render thread/INFO] (Iris) Hardware information:
-[15:36:22] [Render thread/INFO] (Iris) CPU: 4x Intel(R) Core(TM) i5-3330S CPU @ 2.70GHz
-[15:36:22] [Render thread/INFO] (Iris) GPU: NVIDIA GeForce GT 640M OpenGL Engine (Supports OpenGL 4.1 NVIDIA-14.0.32 355.11.11.10.10.143)
-[15:36:22] [Render thread/INFO] (Iris) OS: Mac OS X (10.15.7)
-[15:36:23] [Worker-Main-2/ERROR] (Minecraft) Failed to retrieve profile key pair
+[18:19:38] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/Users/frederic.noury/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.4+mixin.0.8.5/c1dc27696aa4006e492c2485c9ccbcb26045a971/sponge-mixin-0.11.4+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[18:19:38] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
+[18:19:38] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[18:19:38] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[18:19:38] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[18:19:41] [main/INFO] (Smooth Boot) Smooth Boot config initialized
+[18:19:41] [main/WARN] (FileUtil) Configuration conflict: there is more than one oshi.properties file on the classpath
+[18:19:42] [main/WARN] (FileUtil) Configuration conflict: there is more than one oshi.architecture.properties file on the classpath
+[18:19:49] [main/INFO] (Minecraft) Building unoptimized datafixer
+[18:19:53] [Render thread/WARN] (FabricLoader/Mixin) Error loading class: org/quiltmc/loader/impl/entrypoint/minecraft/hooks/EntrypointClient (java.lang.ClassNotFoundException: org/quiltmc/loader/impl/entrypoint/minecraft/hooks/EntrypointClient)
+[18:19:54] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[18:19:54] [Render thread/ERROR] (fabric-screen-api-v1) Failed to verify authentication
+com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
+	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-3.11.49.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:155) ~[authlib-3.11.49.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.<init>(YggdrasilUserApiService.java:55) ~[authlib-3.11.49.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createUserApiService(YggdrasilAuthenticationService.java:161) ~[authlib-3.11.49.jar:?]
+	at net.minecraft.client.MinecraftClient.createUserApiService(MinecraftClient.java:711) [minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.client.MinecraftClient.<init>(MinecraftClient.java:431) [minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:205) [minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:51) [minecraft-project-@-merged-named.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461) [fabric-loader-0.14.9.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) [fabric-loader-0.14.9.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.14.9.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:85) ~[authlib-3.11.49.jar:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-3.11.49.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-3.11.49.jar:?]
+	... 10 more
+[18:19:54] [Render thread/INFO] (fabric-screen-api-v1) Setting user: Player579
+[18:19:54] [Render thread/INFO] (automations) Initializing Automations 0.1.0 alpha
+[18:19:55] [Render thread/INFO] (KryptonSharedInitializer) Compression will use Java, encryption will use Java
+[18:19:55] [Render thread/WARN] (Ksyxis) Ksyxis will speedup your world loading. :P
+[18:19:55] [Render thread/WARN] (Ksyxis) BUT IT MAY CAUSE ISSUES (INCLUDING COMPAT). DON'T ASK OTHER MODS' AUTHORS FOR COMPAT!
+[18:19:55] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[18:19:55] [Render thread/INFO] (KryptonServerInitializer) Krypton is now accelerating your Minecraft client's networking stack 🚀
+[18:19:55] [Render thread/INFO] (KryptonServerInitializer) Note that Krypton is most effective on servers, not the client.
+[18:19:55] [Render thread/INFO] (fabric-screen-api-v1) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[18:19:57] [Worker-Main-2/ERROR] (Minecraft) Failed to retrieve profile key pair
 java.io.IOException: Could not retrieve profile key pair
 	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:130) ~[minecraft-project-@-merged-named.jar:?]
 	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:69) ~[minecraft-project-@-merged-named.jar:?]
@@ -131,28 +117,26 @@ java.io.IOException: Could not retrieve profile key pair
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[15:36:24] [Render thread/INFO] (Minecraft) Reloading ResourceManager: Default, Fabric Mods (Fabric Networking (v0), Fabric Client Tags, Fabric BlockRenderLayer Registration (v1), Fabric Command API (v1), Fabric Data Generation API (v1), Fabric Events Lifecycle (v0), Fabric Containers (v0), Fabric Networking API (v1), Smooth Boot, Fabric Rendering (v0), Fabric Content Registries (v0), Fabric Resource Conditions API (v1), Fabric Language Kotlin, Automations, Fabric API Base, Chunky, Fabric API Lookup API (v1), OmegaConfig, Fabric Transitive Access Wideners (v1), Fabric Object Builder API (v1), Fabric API, Fabric Screen Handler API (v1), Fabric Renderer Registries (v1), Fabric Item API (v1), Fabric Rendering (v1), Fabric Renderer - Indigo, Iris, Fabric Loader, Cull Leaves, Fabric Entity Events (v1), Fabric Command API (v2), Fabric Item Groups (v0), Fabric Loot Tables (v1), Fabric Loot API (v2), Fabric Sound API (v1), Fabric Mining Level API (v1), Fabric Events Interaction (v0), Fabric Dimensions API (v1), MidnightLib, Fabric Key Bindings (v0), Fabric Rendering Fluids (v1), Fabric Rendering Data Attachment (v1), Fabric Models (v0), Fabric Screen API (v1), Fabric Renderer API (v1), Fabric Lifecycle Events (v1), Fabric Particles (v1), Fabric Game Rule API (v1), Fabric Message API (v1), Fabric Crash Report Info (v1), Fabric Game Test API (v1), Fabric Registry Sync (v0), Sodium, Starlight, Not Enough Crashes, EntityCulling-Fabric, Capes, Fabric Commands (v0), Dark Loading Screen, Fabric Convention Tags, Fabric Resource Loader (v0), Fabric Textures (v0), Fabric Key Binding API (v1), LazyDFU, Fabric Biome API (v1), Fabric Transfer API (v1))
-[15:36:24] [Render thread/INFO] (Iris) Creating pipeline for dimension OVERWORLD
-[15:36:24] [Render thread/INFO] (Minecraft) [STDOUT]: (MidnightLib) Player hats successfully loaded!
-[15:36:24] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[15:36:27] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[15:36:27] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[15:36:28] [Render thread/INFO] (Minecraft) OpenAL initialized on device CoreAudio Default
-[15:36:28] [Render thread/INFO] (Minecraft) Sound engine started
-[15:36:28] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[15:36:28] [Render thread/INFO] (Minecraft) Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
-[15:36:28] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[15:36:28] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[15:36:28] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[15:36:28] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[15:36:28] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[15:36:30] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[15:36:30] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[15:36:30] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[15:36:30] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[15:36:55] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[15:36:55] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[15:36:57] [Worker-Main-6/ERROR] (Minecraft) Failed to retrieve profile key pair
+[18:19:58] [Render thread/INFO] (Minecraft) Reloading ResourceManager: Default, Fabric Mods (Fabric Renderer - Indigo, Smooth Boot, Not Enough Crashes, Fabric Command API (v2), Fabric Registry Sync (v0), Fabric Transitive Access Wideners (v1), Fabric Resource Loader (v0), Fabric Game Test API (v1), Fabric Particles (v1), Fabric Models (v0), Fabric Entity Events (v1), Fabric Rendering Fluids (v1), Fabric Loot API (v2), LazyDFU, Fabric Data Generation API (v1), Fabric Textures (v0), Fabric Biome API (v1), Fabric Networking API (v1), Fabric Loader, Automations, Krypton, Fabric Item API (v1), Fabric Rendering Data Attachment (v1), Fabric Resource Conditions API (v1), Fabric API Lookup API (v1), Fabric Crash Report Info (v1), Fabric Renderer API (v1), Fabric Transfer API (v1), Fabric Client Tags, Cloth Config v8, Fabric Game Rule API (v1), Fabric Item Groups (v0), Fabric Key Binding API (v1), Fabric API, Fabric Events Interaction (v0), Fabric Message API (v1), Fabric Content Registries (v0), Fabric Language Kotlin, Fabric Screen API (v1), Fabric Mining Level API (v1), Fabric Dimensions API (v1), Fabric API Base, Fabric Lifecycle Events (v1), Fabric Rendering (v1), Fabric Convention Tags, Fabric BlockRenderLayer Registration (v1), Fabric Object Builder API (v1), Fabric Screen Handler API (v1))
+[18:19:59] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[18:20:02] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[18:20:02] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[18:20:02] [Render thread/INFO] (Minecraft) OpenAL initialized on device CoreAudio Default
+[18:20:02] [Render thread/INFO] (Minecraft) Sound engine started
+[18:20:03] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[18:20:03] [Render thread/INFO] (Minecraft) Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
+[18:20:03] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[18:20:03] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[18:20:03] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[18:20:03] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[18:20:03] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[18:20:05] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[18:20:05] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[18:20:05] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[18:20:05] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[18:20:32] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[18:20:32] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
+[18:20:34] [Worker-Main-6/ERROR] (Minecraft) Failed to retrieve profile key pair
 java.io.IOException: Could not retrieve profile key pair
 	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:130) ~[minecraft-project-@-merged-named.jar:?]
 	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:69) ~[minecraft-project-@-merged-named.jar:?]
@@ -165,508 +149,600 @@ java.io.IOException: Could not retrieve profile key pair
 	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[15:36:57] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 26.30 ms
-[15:36:57] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.2
-[15:36:57] [Server thread/INFO] (Minecraft) Generating keypair
-[15:36:58] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[15:36:58] [Server thread/INFO] (Ksyxis) Not the long loadi-
-[15:37:00] [Render thread/INFO] (Minecraft) Time elapsed: 2433 ms
-[15:37:00] [Server thread/INFO] (Minecraft) Changing view distance to 4, from 10
-[15:37:00] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[15:37:11] [Server thread/INFO] (Minecraft) Player493[local:E:2ecf4e0f] logged in with entity id 1 at (-39.5, 77.0, 46.5)
-[15:37:12] [Server thread/INFO] (Minecraft) Player493 joined the game
-[15:37:12] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 10728ms or 214 ticks behind
-[15:37:12] [Render thread/WARN] (FabricLoader/Mixin) Error loading class: net/minecraft/world/level/material/FluidState (java.lang.ClassNotFoundException: net/minecraft/world/level/material/FluidState)
-[15:37:12] [Render thread/INFO] (ChunkBuilder) Started 1 worker threads
-[15:37:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Iris 1.4.5 has released, with support for 1.19.3 and bug fixes. Download it at: Modrinth
-[15:37:13] [Render thread/INFO] (Minecraft) Loaded 0 advancements
-[15:37:14] [Render thread/INFO] (DonorSkinProvider) Animated skins loaded and ready to use!
-[15:37:15] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[15:37:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[15:37:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[15:37:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[15:37:27] [Netty Server IO #1/WARN] (automations) Player Player493 tried to modify automations.
-[15:37:27] [Render thread/INFO] (Minecraft) [System] [CHAT] You are not an operator on this server.
-[15:37:28] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[15:37:28] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[15:37:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[15:37:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[15:37:30] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2122ms or 42 ticks behind
-[15:37:31] [Render thread/INFO] (Minecraft) Using default channel type
-[15:37:31] [Render thread/INFO] (Minecraft) Started serving on 60864
-[15:37:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Local game hosted on port 60864
-[15:38:52] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[15:38:52] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[15:38:52] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[15:38:52] [Server thread/INFO] (Minecraft) [STDOUT]: called
-[15:38:52] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[15:38:52] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493
-[15:38:55] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[15:38:55] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[15:38:55] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[15:38:55] [Server thread/INFO] (Minecraft) [STDOUT]: called
-[15:38:55] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[15:38:55] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493
-[15:38:58] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[15:38:58] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[15:38:58] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[15:38:58] [Server thread/INFO] (Minecraft) [STDOUT]: called
-[15:38:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[15:38:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493
-[15:51:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Saved screenshot as 2022-12-19_15.51.09.png
-[15:54:19] [Render thread/ERROR] (Minecraft) ########## GL ERROR ##########
-[15:54:19] [Render thread/ERROR] (Minecraft) @ Render
-[15:54:19] [Render thread/ERROR] (Minecraft) 65540: Invalid scancode -1
-[16:14:37] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:14:37] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:38] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:14:38] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:39] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:14:39] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:39] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:14:39] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:40] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:14:40] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:41] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:41] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:41] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:14:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:42] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:42] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:42] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:42] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:43] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:43] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:14:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:44] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:14:44] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:44] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:14:44] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:44] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:14:44] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:44] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:14:44] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:45] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:45] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:45] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:45] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:45] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:14:45] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:46] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:46] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:46] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:14:46] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:14:46] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.dirt', args=[]}
-[16:14:46] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:16:07] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.stone', args=[]}
-[16:16:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ConnectionWidget
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Connection
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/InputWidget
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget$MenuEntry
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/OutputWidget
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes$NodeCategory
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/CButtonWidget
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/AddNodeButtonWidget
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ChooseNodeScreen
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Input
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/customTypes/EntityList
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Output
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Node
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/DataNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/EntityDataNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/ActionNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/KillEntityActionNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/SendMessageToPlayersActionNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/EventNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/BlockBreakEventNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/ServerStartEventNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/AllPlayersDataNode
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/NodeWidget
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/AskForNodeListC2SPacket
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListC2SPacket
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/server/AutomationsServer
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListS2CPacket
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/ModNetworking
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/NodeWrapper
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/AutomationScreen
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/AutomationsClient
-[16:16:48] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/Automations
-[16:16:52] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 3957ms or 79 ticks behind
-[16:17:02] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:17:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:17:02] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[16:17:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[16:17:16] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 8481ms or 169 ticks behind
-[16:17:33] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2196ms or 43 ticks behind
-[16:17:48] [Render thread/INFO] (Minecraft) Loaded 23 advancements
-[16:17:49] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:17:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:17:49] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[16:17:49] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[16:17:52] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:17:52] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:17:52] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[16:17:52] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[16:18:13] [Render thread/INFO] (Minecraft) Loaded 25 advancements
-[16:21:47] [Server thread/INFO] (Minecraft) Player493 lost connection: Disconnected
-[16:21:47] [Server thread/INFO] (Minecraft) Player493 left the game
-[16:21:47] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[16:22:01] [Server thread/INFO] (Minecraft) Stopping server
-[16:22:01] [Server thread/INFO] (Minecraft) Saving players
-[16:22:01] [Server thread/INFO] (Minecraft) Saving worlds
-[16:22:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:22:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:22:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:22:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (BetterSpeedrunWorld): All chunks are saved
-[16:22:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[16:22:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[16:22:02] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[16:22:02] [Render thread/INFO] (ChunkBuilder) Stopping worker threads
-[16:26:21] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[16:26:22] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[16:26:24] [Worker-Main-27/ERROR] (Minecraft) Failed to retrieve profile key pair
-java.io.IOException: Could not retrieve profile key pair
-	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:130) ~[minecraft-project-@-merged-named.jar:?]
-	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:69) ~[minecraft-project-@-merged-named.jar:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run$$$capture(CompletableFuture.java:1768) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:373) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java) [?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) [?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[16:26:24] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 3.048 ms
-[16:26:24] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.2
-[16:26:24] [Server thread/INFO] (Minecraft) Generating keypair
-[16:26:25] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[16:26:25] [Server thread/INFO] (Ksyxis) Not the long loadi-
-[16:31:30] [Render thread/INFO] (Minecraft) Time elapsed: 304881 ms
-[16:32:13] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 345288ms or 6905 ticks behind
-[16:32:13] [Server thread/INFO] (Minecraft) Changing view distance to 4, from 10
-[16:32:13] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[16:32:25] [Server thread/INFO] (Minecraft) Player493[local:E:c39af3b3] logged in with entity id 8170 at (-61.140345275438264, 78.0, 178.05105412468131)
-[16:32:25] [Server thread/INFO] (Minecraft) Player493 joined the game
-[16:32:25] [Render thread/INFO] (ChunkBuilder) Started 1 worker threads
-[16:32:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Iris 1.4.5 has released, with support for 1.19.3 and bug fixes. Download it at: Modrinth
-[16:32:27] [Render thread/INFO] (Minecraft) Loaded 25 advancements
-[16:32:30] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:32:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:32:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:32:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:32:31] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2652ms or 53 ticks behind
-[16:32:35] [Server thread/INFO] (Minecraft) Player493 lost connection: Disconnected
-[16:32:35] [Server thread/INFO] (Minecraft) Player493 left the game
-[16:32:35] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[16:32:45] [Server thread/INFO] (Minecraft) Stopping server
-[16:32:45] [Server thread/INFO] (Minecraft) Saving players
-[16:32:45] [Server thread/INFO] (Minecraft) Saving worlds
-[16:32:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:32:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:32:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:32:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (BetterSpeedrunWorld): All chunks are saved
-[16:32:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[16:32:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[16:32:48] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[16:32:49] [Render thread/INFO] (ChunkBuilder) Stopping worker threads
-[16:32:57] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[16:32:57] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[16:32:58] [Worker-Main-33/ERROR] (Minecraft) Failed to retrieve profile key pair
-java.io.IOException: Could not retrieve profile key pair
-	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:130) ~[minecraft-project-@-merged-named.jar:?]
-	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:69) ~[minecraft-project-@-merged-named.jar:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run$$$capture(CompletableFuture.java:1768) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:373) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java) [?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) [?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[16:32:58] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 377.0 μs
-[16:32:58] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.2
-[16:32:58] [Server thread/INFO] (Minecraft) Generating keypair
-[16:32:58] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[16:32:58] [Server thread/INFO] (Ksyxis) Not the long loadi-
-[16:33:08] [Render thread/INFO] (Minecraft) Time elapsed: 9598 ms
-[16:33:15] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 14604ms or 292 ticks behind
-[16:33:15] [Server thread/INFO] (Minecraft) Changing view distance to 4, from 10
-[16:33:15] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[16:33:20] [Server thread/INFO] (Minecraft) Player493[local:E:ae850d43] logged in with entity id 8489 at (-61.140345275438264, 78.0, 178.05105412468131)
-[16:33:20] [Server thread/INFO] (Minecraft) Player493 joined the game
-[16:33:20] [Render thread/INFO] (ChunkBuilder) Started 1 worker threads
-[16:33:20] [Render thread/INFO] (Minecraft) [System] [CHAT] Iris 1.4.5 has released, with support for 1.19.3 and bug fixes. Download it at: Modrinth
-[16:33:21] [Render thread/INFO] (Minecraft) Loaded 25 advancements
-[16:33:24] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:33:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:33:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:33:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:34:26] [Netty Server IO #6/WARN] (automations) Player Player493 tried to modify automations.
-[16:34:26] [Render thread/INFO] (Minecraft) [System] [CHAT] You are not an operator on this server.
-[16:34:27] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:34:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:34:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:34:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:34:29] [Render thread/INFO] (Minecraft) Using default channel type
-[16:34:29] [Render thread/INFO] (Minecraft) Started serving on 61192
-[16:34:29] [Render thread/INFO] (Minecraft) [System] [CHAT] Local game hosted on port 61192
-[16:35:00] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:35:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:35:00] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[16:35:00] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:35:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:35:00] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:35:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:35:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[16:35:02] [Server thread/INFO] (Minecraft) Player493 lost connection: Disconnected
-[16:35:02] [Server thread/INFO] (Minecraft) Player493 left the game
-[16:35:02] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[16:35:02] [Server thread/INFO] (Minecraft) Stopping server
-[16:35:02] [Server thread/INFO] (Minecraft) Saving players
-[16:35:02] [Server thread/INFO] (Minecraft) Saving worlds
-[16:35:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:35:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:35:04] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:35:04] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (BetterSpeedrunWorld): All chunks are saved
-[16:35:04] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[16:35:04] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[16:35:04] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[16:35:04] [Render thread/INFO] (ChunkBuilder) Stopping worker threads
-[16:35:38] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[16:35:38] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[16:35:39] [Worker-Main-33/ERROR] (Minecraft) Failed to retrieve profile key pair
-java.io.IOException: Could not retrieve profile key pair
-	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:130) ~[minecraft-project-@-merged-named.jar:?]
-	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:69) ~[minecraft-project-@-merged-named.jar:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run$$$capture(CompletableFuture.java:1768) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:373) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java) [?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) [?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[16:35:39] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 294.9 μs
-[16:35:39] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.2
-[16:35:39] [Server thread/INFO] (Minecraft) Generating keypair
-[16:35:39] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[16:35:39] [Server thread/INFO] (Ksyxis) Not the long loadi-
-[16:35:41] [Server thread/INFO] (Minecraft) Changing view distance to 4, from 10
-[16:35:41] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[16:35:41] [Render thread/INFO] (Minecraft) Time elapsed: 1781 ms
-[16:35:46] [Server thread/INFO] (Minecraft) Player493[local:E:a7b5a3b3] logged in with entity id 8913 at (-39.5, 75.0, 46.5)
-[16:35:46] [Server thread/INFO] (Minecraft) Player493 joined the game
-[16:35:46] [Render thread/INFO] (ChunkBuilder) Started 1 worker threads
-[16:35:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Iris 1.4.5 has released, with support for 1.19.3 and bug fixes. Download it at: Modrinth
-[16:35:46] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 4783ms or 95 ticks behind
-[16:35:47] [Render thread/INFO] (Minecraft) Loaded 25 advancements
-[16:35:48] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:35:48] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:35:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:35:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:37:18] [Netty Server IO #1/WARN] (automations) Player Player493 tried to modify automations.
-[16:37:19] [Render thread/INFO] (Minecraft) [System] [CHAT] You are not an operator on this server.
-[16:37:20] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:37:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:37:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:37:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:37:22] [Render thread/INFO] (Minecraft) Using default channel type
-[16:37:22] [Render thread/INFO] (Minecraft) Started serving on 61210
-[16:37:22] [Render thread/INFO] (Minecraft) [System] [CHAT] Local game hosted on port 61210
-[16:37:51] [Server thread/INFO] (Minecraft) Player493 lost connection: Disconnected
-[16:37:51] [Server thread/INFO] (Minecraft) Player493 left the game
-[16:37:51] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[16:37:51] [Server thread/INFO] (Minecraft) Stopping server
-[16:37:51] [Server thread/INFO] (Minecraft) Saving players
-[16:37:51] [Server thread/INFO] (Minecraft) Saving worlds
-[16:37:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:37:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:37:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:37:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (BetterSpeedrunWorld): All chunks are saved
-[16:37:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[16:37:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[16:37:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[16:37:52] [Render thread/INFO] (ChunkBuilder) Stopping worker threads
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/Automations
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/AutomationsClient
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/AutomationScreen
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/NodeWrapper
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/ModNetworking
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListS2CPacket
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/server/AutomationsServer
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListC2SPacket
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/AskForNodeListC2SPacket
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/NodeWidget
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Node
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/EventNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/BlockBreakEventNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/ServerStartEventNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/ActionNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/KillEntityActionNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/SendMessageToPlayersActionNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/DataNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/EntityDataNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/AllPlayersDataNode
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Output
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/customTypes/EntityList
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Input
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ChooseNodeScreen
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/CButtonWidget
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/AddNodeButtonWidget
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes$NodeCategory
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/OutputWidget
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget$MenuEntry
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/InputWidget
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Connection
-[16:39:30] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ConnectionWidget
-[16:39:49] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[16:39:49] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[16:39:52] [Worker-Main-31/ERROR] (Minecraft) Failed to retrieve profile key pair
-java.io.IOException: Could not retrieve profile key pair
-	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:130) ~[minecraft-project-@-merged-named.jar:?]
-	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:69) ~[minecraft-project-@-merged-named.jar:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run$$$capture(CompletableFuture.java:1768) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:373) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java) [?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) [?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[16:39:52] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 3.742 ms
-[16:39:52] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.2
-[16:39:52] [Server thread/INFO] (Minecraft) Generating keypair
-[16:39:52] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[16:39:52] [Server thread/INFO] (Ksyxis) Not the long loadi-
-[16:39:56] [Render thread/INFO] (Minecraft) Time elapsed: 3858 ms
-[16:39:56] [Server thread/INFO] (Minecraft) Changing view distance to 4, from 10
-[16:39:56] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[16:40:07] [Server thread/INFO] (Minecraft) Player493[local:E:40d4a8ad] logged in with entity id 9197 at (-39.5, 75.0, 46.5)
-[16:40:07] [Server thread/INFO] (Minecraft) Player493 joined the game
-[16:40:07] [Render thread/INFO] (ChunkBuilder) Started 1 worker threads
-[16:40:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Iris 1.4.5 has released, with support for 1.19.3 and bug fixes. Download it at: Modrinth
-[16:40:07] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 11131ms or 222 ticks behind
-[16:40:11] [Render thread/INFO] (Minecraft) Loaded 25 advancements
-[16:40:11] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:40:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:40:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:40:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:40:29] [Render thread/INFO] (Minecraft) [System] [CHAT] You are not an operator on this server.
-[16:40:29] [Netty Server IO #4/WARN] (automations) Player Player493 tried to modify automations.
-[16:40:30] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:40:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:40:33] [Render thread/INFO] (Minecraft) Using default channel type
-[16:40:33] [Render thread/INFO] (Minecraft) Started serving on 61227
-[16:40:33] [Render thread/INFO] (Minecraft) [System] [CHAT] Local game hosted on port 61227
-[16:40:34] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:40:34] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:40:34] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 3764ms or 75 ticks behind
-[16:40:49] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:40:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:40:49] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[16:40:49] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:40:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:40:49] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:40:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:40:49] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:40:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:40:49] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:40:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:40:49] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[16:40:52] [Server thread/INFO] (Minecraft) Player493 lost connection: Disconnected
-[16:40:52] [Server thread/INFO] (Minecraft) Player493 left the game
-[16:40:52] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[16:40:52] [Server thread/INFO] (Minecraft) Stopping server
-[16:40:52] [Server thread/INFO] (Minecraft) Saving players
-[16:40:52] [Server thread/INFO] (Minecraft) Saving worlds
-[16:40:53] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:40:54] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:40:54] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:40:54] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (BetterSpeedrunWorld): All chunks are saved
-[16:40:54] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[16:40:54] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[16:40:54] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[16:40:54] [Render thread/INFO] (ChunkBuilder) Stopping worker threads
-[16:40:59] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[16:40:59] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[16:40:59] [Worker-Main-42/ERROR] (Minecraft) Failed to retrieve profile key pair
-java.io.IOException: Could not retrieve profile key pair
-	at net.minecraft.client.util.ProfileKeys.fetchKeyPair(ProfileKeys.java:130) ~[minecraft-project-@-merged-named.jar:?]
-	at net.minecraft.client.util.ProfileKeys.method_44291(ProfileKeys.java:69) ~[minecraft-project-@-merged-named.jar:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run$$$capture(CompletableFuture.java:1768) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java) [?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:373) [?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java) [?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) [?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
-[16:40:59] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 284.0 μs
-[16:40:59] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.2
-[16:40:59] [Server thread/INFO] (Minecraft) Generating keypair
-[16:41:00] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[16:41:00] [Server thread/INFO] (Ksyxis) Not the long loadi-
-[16:41:00] [Render thread/INFO] (Minecraft) Time elapsed: 575 ms
-[16:41:00] [Server thread/INFO] (Minecraft) Changing view distance to 4, from 10
-[16:41:00] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[16:41:09] [Server thread/INFO] (Minecraft) Player493[local:E:1f6703a1] logged in with entity id 9549 at (-39.5, 75.0, 46.5)
-[16:41:09] [Server thread/INFO] (Minecraft) Player493 joined the game
-[16:41:09] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 8639ms or 172 ticks behind
-[16:41:09] [Render thread/INFO] (ChunkBuilder) Started 1 worker threads
-[16:41:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Iris 1.4.5 has released, with support for 1.19.3 and bug fixes. Download it at: Modrinth
-[16:41:09] [Render thread/INFO] (Minecraft) Loaded 25 advancements
-[16:41:13] [Netty Server IO #7/WARN] (automations) Player Player493 tried to modify automations.
-[16:41:13] [Render thread/INFO] (Minecraft) [System] [CHAT] You are not an operator on this server.
-[16:41:14] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:41:14] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:41:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:41:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:41:16] [Render thread/INFO] (Minecraft) Using default channel type
-[16:41:16] [Render thread/INFO] (Minecraft) Started serving on 61234
-[16:41:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Local game hosted on port 61234
-[16:41:22] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:41:22] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:41:22] [Server thread/INFO] (Minecraft) Player493 fell out of the world
-[16:41:22] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:41:22] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:41:22] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:41:22] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:41:22] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:41:22] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:41:22] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:41:22] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:41:22] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.grass_block', args=[]}
-[16:41:22] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Kill Entity.
-[16:41:22] [Render thread/INFO] (Minecraft) [System] [CHAT] Player493 fell out of the world
-[16:41:30] [Render thread/INFO] (fabric-screen-api-v1) Stopping!
-[16:41:30] [Server thread/INFO] (Minecraft) Player493 lost connection: Disconnected
-[16:41:30] [Server thread/INFO] (Minecraft) Player493 left the game
-[16:41:30] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[16:41:30] [Server thread/INFO] (Minecraft) Stopping server
-[16:41:30] [Server thread/INFO] (Minecraft) Saving players
-[16:41:30] [Server thread/INFO] (Minecraft) Saving worlds
-[16:41:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:overworld
-[16:41:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_nether
-[16:41:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[BetterSpeedrunWorld]'/minecraft:the_end
-[16:41:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (BetterSpeedrunWorld): All chunks are saved
-[16:41:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[16:41:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[16:41:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[16:41:31] [Render thread/INFO] (ChunkBuilder) Stopping worker threads
+[18:20:34] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 3.762 ms
+[18:20:34] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.2
+[18:20:34] [Server thread/INFO] (Minecraft) Generating keypair
+[18:20:35] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[18:20:35] [Server thread/INFO] (Ksyxis) Not the long loadi-
+[18:20:38] [Render thread/INFO] (Minecraft) Time elapsed: 2452 ms
+[18:20:38] [Server thread/INFO] (Minecraft) Changing view distance to 2, from 10
+[18:20:38] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[18:21:05] [Server thread/INFO] (Minecraft) Player579[local:E:606fd397] logged in with entity id 1 at (-654.5000969580244, 67.0, 435.17836658759217)
+[18:21:06] [Server thread/INFO] (Minecraft) Player579 joined the game
+[18:21:06] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 27271ms or 545 ticks behind
+[18:21:07] [Render thread/INFO] (Minecraft) Loaded 0 advancements
+[18:21:10] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:21:10] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:21:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:21:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:21:36] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:21:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:21:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:21:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:21:38] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 3961ms or 79 ticks behind
+[18:21:54] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:21:54] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:21:54] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:21:54] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:22:08] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:22:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:22:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:22:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:22:22] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:22:22] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:22:22] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:22:22] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:22:32] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:22:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:22:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:22:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:22:41] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:22:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:22:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:22:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:23:40] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:23:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:23:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:23:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:23:46] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:23:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:23:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:23:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:24:15] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:24:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:24:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:24:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:24:42] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:24:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:24:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:24:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:24:42] [Render thread/INFO] (Minecraft) [System] [CHAT] False
+[18:24:43] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:24:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:24:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:24:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:24:43] [Render thread/INFO] (Minecraft) [System] [CHAT] False
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget$MenuEntry
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ChooseNodeScreen
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/CButtonWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/AddNodeButtonWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/EditFieldScreen
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/InputWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/OutputWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ConnectionWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Input
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Connection
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/customTypes/EntityList
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Output
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes$NodeCategory
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Node
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/DataNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/StringDataNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/StringConcatenateDataNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/EntityDataNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/ActionNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/SendMessageToPlayersActionNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/KillEntityActionNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/BoolDataNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/AllPlayersDataNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/IntegerDataNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/EventNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/BlockBreakEventNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/ServerStartEventNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/condition/IfConditionNode
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/NodeWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/EditableDataNodeWidget
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/AskForNodeListC2SPacket
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListC2SPacket
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/server/AutomationsServer
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListS2CPacket
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/ModNetworking
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/NodeList
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/AutomationScreen
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/AutomationsClient
+[18:24:45] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/Automations
+[18:24:47] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2093ms or 41 ticks behind
+[18:24:56] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:24:56] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:24:56] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:24:56] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:24:57] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:25:15] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 12641ms or 252 ticks behind
+[18:26:48] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:26:48] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:48] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:48] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:26:48] [Render thread/INFO] (Minecraft) [System] [CHAT] False
+[18:26:49] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:26:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:49] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:26:49] [Render thread/INFO] (Minecraft) [System] [CHAT] False
+[18:26:50] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:26:50] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:50] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:50] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:26:50] [Render thread/INFO] (Minecraft) [System] [CHAT] False
+[18:26:56] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:26:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:26:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:26:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:26:58] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:26:58] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:58] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:58] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:26:58] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:26:59] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:26:59] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:59] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:26:59] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:26:59] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:27:00] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:27:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:27:00] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:27:00] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:27:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:27:00] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:27:01] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:27:01] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:27:01] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:27:01] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:27:01] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:27:01] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:27:01] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:30:23] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:30:23] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:30:23] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:30:23] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:30:27] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:30:27] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:30:27] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:30:27] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:30:27] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:30:29] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:30:29] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:30:29] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:30:29] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:30:30] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:30:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:30:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:30:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:36:03] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:36:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:36:03] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:36:04] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:36:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:36:04] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:36:04] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:36:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:36:04] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:36:05] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.oak_leaves', args=[]}
+[18:36:05] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:05] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:36:05] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:36:05] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:36:41] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:36:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:36:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:36:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:37:38] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:37:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:37:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:37:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:37:51] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:37:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:37:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:37:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:40:57] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:40:57] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:40:57] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:40:57] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:40:59] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.vine', args=[]}
+[18:40:59] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:40:59] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:40:59] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:40:59] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:41:00] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.vine', args=[]}
+[18:41:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:41:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:41:00] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:41:00] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:41:03] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:41:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:41:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:41:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:41:22] [Render thread/ERROR] (Minecraft) ########## GL ERROR ##########
+[18:41:22] [Render thread/ERROR] (Minecraft) @ Render
+[18:41:22] [Render thread/ERROR] (Minecraft) 65540: Invalid scancode -1
+[18:45:07] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:45:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:45:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:45:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:45:15] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:45:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:45:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:45:15] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/Automations
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/AutomationsClient
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/AutomationScreen
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/NodeList
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/ModNetworking
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListS2CPacket
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/server/AutomationsServer
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListC2SPacket
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/AskForNodeListC2SPacket
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/NodeWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/EditableDataNodeWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Node
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/EventNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/BlockBreakEventNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/ServerStartEventNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/ActionNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/KillEntityActionNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/SendMessageToPlayersActionNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/DataNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/BoolDataNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/IntegerDataNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/EntityDataNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/StringConcatenateDataNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/StringDataNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/AllPlayersDataNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/condition/IfConditionNode
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes$NodeCategory
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Output
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/customTypes/EntityList
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Connection
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Input
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ConnectionWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/OutputWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/InputWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/EditFieldScreen
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/CButtonWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/AddNodeButtonWidget
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ChooseNodeScreen
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget$MenuEntry
+[18:52:39] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ConfirmationScreen
+[18:52:42] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2598ms or 51 ticks behind
+[18:53:10] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 12795ms or 255 ticks behind
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ConfirmationScreen
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget$MenuEntry
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ChooseNodeScreen
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/CButtonWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/AddNodeButtonWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/EditFieldScreen
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/InputWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/OutputWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ConnectionWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Input
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Connection
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/customTypes/EntityList
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Output
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes$NodeCategory
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Node
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/DataNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/StringDataNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/StringConcatenateDataNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/EntityDataNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/IntegerDataNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/BoolDataNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/AllPlayersDataNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/ActionNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/KillEntityActionNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/SendMessageToPlayersActionNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/EventNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/BlockBreakEventNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/ServerStartEventNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/condition/IfConditionNode
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/NodeWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/EditableDataNodeWidget
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/AskForNodeListC2SPacket
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListC2SPacket
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/server/AutomationsServer
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListS2CPacket
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/ModNetworking
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/NodeList
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/AutomationScreen
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/AutomationsClient
+[18:54:50] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/Automations
+[18:54:52] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2006ms or 40 ticks behind
+[18:55:20] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 13205ms or 264 ticks behind
+[18:55:44] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 8201ms or 164 ticks behind
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/Automations
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/AutomationsClient
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/AutomationScreen
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/NodeList
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/ModNetworking
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListS2CPacket
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/server/AutomationsServer
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListC2SPacket
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/AskForNodeListC2SPacket
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/NodeWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/EditableDataNodeWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Node
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/EventNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/BlockBreakEventNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/ServerStartEventNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/ActionNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/KillEntityActionNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/SendMessageToPlayersActionNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/DataNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/BoolDataNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/IntegerDataNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/EntityDataNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/StringConcatenateDataNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/StringDataNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/AllPlayersDataNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/condition/IfConditionNode
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes$NodeCategory
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Output
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/customTypes/EntityList
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Connection
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Input
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ConnectionWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/OutputWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/InputWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/EditFieldScreen
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/CButtonWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/AddNodeButtonWidget
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ChooseNodeScreen
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget$MenuEntry
+[18:55:59] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ConfirmationScreen
+[18:56:02] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2302ms or 46 ticks behind
+[18:56:37] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 20325ms or 406 ticks behind
+[18:56:59] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 7054ms or 141 ticks behind
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ConfirmationScreen
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget$MenuEntry
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/ChooseNodeScreen
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/CButtonWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/AddNodeButtonWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/EditFieldScreen
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ContextMenuWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/InputWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/OutputWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/ConnectionWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Input
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Connection
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/customTypes/EntityList
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Output
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Nodes$NodeCategory
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/Node
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/DataNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/StringDataNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/StringConcatenateDataNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/EntityDataNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/IntegerDataNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/field/BoolDataNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/data/AllPlayersDataNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/ActionNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/KillEntityActionNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/action/SendMessageToPlayersActionNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/EventNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/BlockBreakEventNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/events/ServerStartEventNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/node/condition/IfConditionNode
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/NodeWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/widget/EditableDataNodeWidget
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/AskForNodeListC2SPacket
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListC2SPacket
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/server/AutomationsServer
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/NodeListS2CPacket
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/networking/ModNetworking
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/NodeList
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/gui/screen/AutomationScreen
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/client/AutomationsClient
+[18:57:08] [JDWP Transport Listener: dt_socket/INFO] (FabricLoader/Mixin/agent) Redefining class fr/artus25200/automations/common/Automations
+[18:57:30] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 16181ms or 323 ticks behind
+[18:57:58] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 13343ms or 266 ticks behind
+[18:58:02] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:58:02] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:58:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:58:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:58:34] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:58:34] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:34] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:34] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:58:34] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:58:34] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:58:34] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:58:41] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:58:41] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:58:41] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:58:41] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:58:41] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:58:42] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:58:42] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:58:42] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:58:42] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:58:42] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:58:42] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:58:42] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:58:42] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:58:42] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:58:43] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:58:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:58:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:58:43] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:58:43] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:58:43] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:02] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:02] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:02] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:02] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:02] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:02] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:02] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:03] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:03] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:03] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:03] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:03] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:03] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:03] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:03] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:03] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:03] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:04] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:04] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:04] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:04] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:04] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:04] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:04] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:05] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:05] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:05] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:05] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:05] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:05] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:05] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:06] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:06] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:06] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:06] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:06] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:06] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:06] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:07] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:07] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:07] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:07] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:07] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:07] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:07] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:08] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:08] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:08] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:08] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:08] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:08] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:08] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:09] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:09] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:09] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:09] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:09] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:09] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:09] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:11] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:11] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:11] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:11] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:11] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:11] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:11] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:12] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_leaves', args=[]}
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:12] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:12] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:12] [Server thread/INFO] (automations) Block broken : translation{key='block.minecraft.jungle_log', args=[]}
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : None.
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : If condition.
+[18:59:12] [Server thread/INFO] (automations) Event triggered : On Block Break. Executing ActionNode : Send Chat Message.
+[18:59:13] [Render thread/INFO] (Minecraft) [System] [CHAT] True
+[18:59:13] [Render thread/INFO] (Minecraft) [System] [CHAT] You broke a block
+[18:59:24] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[18:59:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:59:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:59:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether

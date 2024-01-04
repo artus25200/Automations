@@ -14,11 +14,13 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class EntityDataNode extends DataNode{
-
-	public EntityDataNode(){
-		super();
+	@Override
+	public void setInputs() {
 		this.inputs.add(new Input(this, "Entity", EntityList.class));
+	}
 
+	@Override
+	public void setOutputs() {
 		this.outputs.add(new Output(this, "name", String.class));
 		this.outputs.add(new Output(this, "position", Vec3d.class));
 		this.outputs.add(new Output(this, "world", World.class));
@@ -29,7 +31,7 @@ public class EntityDataNode extends DataNode{
 	public boolean onExecute() {
 		Entity entity = ((EntityList)this.inputs.get(0).getValue()).entities[0];
 
-		this.outputs.get(0).value = entity.getName();
+		this.outputs.get(0).value = entity.getName().getString();
 		this.outputs.get(1).value = entity.getPos();
 		this.outputs.get(2).value = entity.getWorld();
 		this.outputs.get(3).value = entity.getServer();

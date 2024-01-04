@@ -23,8 +23,8 @@ public class CButtonWidget extends ButtonWidget {
 
 	@Override
 	public void renderButton(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-		int color = isMouseOver(mouseX, mouseY) ? AutomationsClient.darkenColor(this.color, -50) : this.color;
-		DrawableHelper.fill(matrices, x, y, x + width, y + height, color);
-		DrawableHelper.drawCenteredText(matrices, getTr(), getMessage(), this.x + this.width/2, this.y+(this.height-getTr().fontHeight)/2, 0xFFFFFFFF);
+		int color_ = isMouseOver(mouseX, mouseY) ? AutomationsClient.darkenColor(this.color, 20) : this.color;
+		DrawableHelper.fill(matrices, x, y, x + width, y + height, color_);
+		DrawableHelper.drawCenteredText(matrices, getTr(), getMessage(), this.x + this.width/2, this.y+(this.height-getTr().fontHeight)/2 +1, 0xFFFFFFFF);
 	}
 }

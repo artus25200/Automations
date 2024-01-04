@@ -10,6 +10,8 @@ import fr.artus25200.automations.client.gui.widget.*;
 import fr.artus25200.automations.common.networking.ModNetworking;
 import fr.artus25200.automations.common.node.Connection;
 import fr.artus25200.automations.common.node.Node;
+import fr.artus25200.automations.common.node.data.DataNode;
+import fr.artus25200.automations.common.node.data.field.Editable;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -25,7 +27,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Environment(EnvType.CLIENT)
@@ -51,9 +52,15 @@ public class AutomationScreen extends Screen implements RightClickable{
     }
 
     public void addNode(Node n, int x, int y){
-        NodeWidget nodeWidget = new NodeWidget(n, x, y);
-        AutomationsClient.nodeWrapper.nodes.put(n, nodeWidget);
-        this.reload();
+        NodeWidget nodeWidget;
+        if(n instanceof DataNode && n instanceof Editable){
+            nodeWidget = new EditableDataNodeWidget(n, x, y);
+        }
+        else {
+            nodeWidget = new NodeWidget(n, x, y);
+        }
+        AutomationsClient.nodeList.nodes.put(n, nodeWidget);
+        this.refresh();
     }
 
     public void addNode(Node n){
@@ -66,14 +73,12 @@ public class AutomationScreen extends Screen implements RightClickable{
     }
 
     public void reload(){
-        if(!this.children().isEmpty()) {
-            Iterator<? extends Element> itr = this.children().iterator();
-            while (itr.hasNext()) {
-                Element e = itr.next();
-                itr.remove();
-            }
-        }
-        AutomationsClient.nodeWrapper.nodes.forEach((node, nodeWidget) -> {
+        this.init();
+    }
+
+    public void refresh(){
+        this.clearChildren();
+        AutomationsClient.nodeList.nodes.forEach((node, nodeWidget) -> {
             this.addDrawableChild(nodeWidget);
             rightClickables.add(nodeWidget);
             rightClickables.addAll(nodeWidget.inputs.values());
@@ -86,10 +91,9 @@ public class AutomationScreen extends Screen implements RightClickable{
 
     @Override
     protected void init() {
-        instance = this;
-        this.reload();
-
         super.init();
+        instance = this;
+        this.refresh();
 
         this.addDrawableChild(new CButtonWidget(0xFF000000, 10, 10, 100, 20, Text.literal("Save and Reload"), (button) -> this.saveAndReload()));
 
@@ -103,7 +107,7 @@ public class AutomationScreen extends Screen implements RightClickable{
         ConnectionWidget connectionWidget = new ConnectionWidget(connection);
         outputWidget.connections.put(connection, connectionWidget);
         inputWidget.connectionWidget = connectionWidget;
-        AutomationsClient.nodeWrapper.connections.put(connection, connectionWidget);
+        AutomationsClient.nodeList.connections.put(connection, connectionWidget);
     }
 
     @Override
@@ -118,7 +122,10 @@ public class AutomationScreen extends Screen implements RightClickable{
             }
             contextMenuWidget = this.onRightCLick(mouseX, mouseY);
         } else {
-            if(contextMenuWidget != null) if(!contextMenuWidget.mouseClicked(mouseX, mouseY, button)) contextMenuWidget = null;
+            if(contextMenuWidget != null){
+                contextMenuWidget.mouseClicked(mouseX, mouseY, button);
+                contextMenuWidget = null;
+            }
             for (Element e : this.children()) {
                 if(e.mouseClicked(mouseX, mouseY, button)) return true;
             }
@@ -150,7 +157,7 @@ public class AutomationScreen extends Screen implements RightClickable{
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             ObjectOutputStream os = new ObjectOutputStream(byteArrayOutputStream);
-            os.writeObject(AutomationsClient.nodeWrapper);
+            os.writeObject(AutomationsClient.nodeList);
             os.close();
             PacketByteBuf p = PacketByteBufs.create();
             p.writeByteArray(byteArrayOutputStream.toByteArray());
@@ -192,8 +199,17 @@ public class AutomationScreen extends Screen implements RightClickable{
                 this.close();
                 return true;
             }
-            else {
-
+            else{
+                assert this.client != null;
+                this.client.setScreen(new ConfirmationScreen(this, (save) -> {
+                    if(save) {
+                        saveAndReload();
+                        this.close();
+                    }
+                    else{
+                        this.close();
+                    }
+                }, Text.literal("Not Saved"), Text.literal("Do you want to quit without saving ?"), Text.literal("Save and quit"), Text.literal("Quit without saving")));
             }
         }
         return super.keyPressed(keyCode, scanCode, modifiers);

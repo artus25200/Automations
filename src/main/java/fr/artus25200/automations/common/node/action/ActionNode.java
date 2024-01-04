@@ -9,10 +9,15 @@ public abstract class ActionNode extends Node {
     public Input actionInput;
     public Output actionOutput;
 
-    public ActionNode(){
+    @Override
+    public void setInputs() {
         actionInput = new Input(this, "Action", Action.class);
-        actionOutput = new Output(this, "Action", Action.class);
         inputs.add(actionInput);
+    }
+
+    @Override
+    public void setOutputs() {
+        actionOutput = new Output(this, "Action", Action.class);
         outputs.add(actionOutput);
     }
 

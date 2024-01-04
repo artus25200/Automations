@@ -30,7 +30,7 @@ public class AskForNodeListC2SPacket {
 		try {
 			ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
 			ObjectOutputStream os = new ObjectOutputStream(byteArray);
-			os.writeObject(AutomationsServer.nodeWrapper);
+			os.writeObject(AutomationsServer.nodeList);
 			os.close();
 			PacketByteBuf buffer = PacketByteBufs.create();
 			buffer.writeByteArray(byteArray.toByteArray());

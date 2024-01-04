@@ -16,6 +16,7 @@ import net.minecraft.text.Text;
 
 import java.util.*;
 
+//TODO: Tabs or search
 public class ChooseNodeScreen extends Screen {
 
 	double mouseX, mouseY;
@@ -69,7 +70,7 @@ public class ChooseNodeScreen extends Screen {
 			HashMap<String, Node> n2 = new HashMap<>();
 
 			for(Node n : Nodes.NODE_REGISTERY.stream().toList()){
-				if(Arrays.asList(n.getCategories()).containsAll(selectedCategories)){
+				if(new HashSet<>(Arrays.asList(n.getCategories())).containsAll(selectedCategories)){
 					n2.put(n.getName(), n);
 				}
 			}
@@ -117,4 +118,6 @@ public class ChooseNodeScreen extends Screen {
 		checkCategories = true;
 		return super.mouseClicked(mouseX, mouseY, button);
 	}
+
+
 }

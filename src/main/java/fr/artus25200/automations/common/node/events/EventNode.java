@@ -6,18 +6,10 @@ import fr.artus25200.automations.common.node.Nodes;
 import fr.artus25200.automations.common.node.Output;
 import fr.artus25200.automations.common.node.action.Action;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public abstract class EventNode extends Node {
     public Output actionOutput;
-
-    public EventNode(){
-        this.actionOutput = new Output(this, "Action", Action.class);
-        this.outputs.add(this.actionOutput);
-    }
-
+    
     @Override
     public int getColor() {
         return 0xFFfAEB61;
@@ -35,6 +27,17 @@ public abstract class EventNode extends Node {
             return this.actionOutput.connections.get(0).input.parent.Execute();
         }
         return false;
+    }
+
+    @Override
+    public void setInputs() {
+        // no inputs
+    }
+
+    @Override
+    public void setOutputs() {
+        this.actionOutput = new Output(this, "Action", Action.class);
+        this.outputs.add(this.actionOutput);
     }
 
     @Override

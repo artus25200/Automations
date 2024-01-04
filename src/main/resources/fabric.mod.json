@@ -3,7 +3,7 @@
   "id": "automations",
   "version": "${version}",
   "name": "Automations",
-  "description": "A Minecraft mod to automate things. The goal is to have a similar workflow as in IOS Shorctcuts and be able to easily create simple plugins-like automations.",
+  "description": "A Minecraft mod to automate things. The goal is to be able to easily create simple plugins.",
   "authors": [
     "Artus25200"
   ],

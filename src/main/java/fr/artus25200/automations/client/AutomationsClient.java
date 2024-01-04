@@ -5,14 +5,10 @@
 package fr.artus25200.automations.client;
 
 import fr.artus25200.automations.client.gui.screen.AutomationScreen;
-import fr.artus25200.automations.common.Automations;
-import fr.artus25200.automations.common.NodeWrapper;
+import fr.artus25200.automations.common.NodeList;
 import fr.artus25200.automations.common.networking.ModNetworking;
 import fr.artus25200.automations.common.networking.NodeListS2CPacket;
-import fr.artus25200.automations.common.node.Connection;
 import fr.artus25200.automations.common.node.action.Action;
-import fr.artus25200.automations.common.node.action.KillEntityActionNode;
-import fr.artus25200.automations.common.node.events.BlockBreakEventNode;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -22,12 +18,8 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.option.StickyKeyBinding;
-import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
-
-import java.io.IOException;
 
 @Environment(EnvType.CLIENT)
 public class AutomationsClient implements ClientModInitializer {
@@ -37,11 +29,11 @@ public class AutomationsClient implements ClientModInitializer {
 	public static TextRenderer tr;
 	public static boolean shouldOpenNodeScreen = false;
 
-	public static NodeWrapper nodeWrapper;
+	public static NodeList nodeList;
 
 	@Override
 	public void onInitializeClient() {
-		nodeWrapper = new NodeWrapper();
+		nodeList = new NodeList();
 
 		ModNetworking.RegisterS2CPackets();
 		test();
@@ -93,9 +85,15 @@ public class AutomationsClient implements ClientModInitializer {
 	}
 
 	public static int darkenColor(int color, int amount){
-		int r = Math.max(Math.min(((color >> 16) & 0x00FF) - amount, 0xFF), 0);
-		int g = Math.max(Math.min(((color >> 8) & 0x0000FF) - amount, 0xFF), 0);
-		int b = Math.max(Math.min((((color)& 0x000000FF) - amount), 0xFF), 0);
-		return g | (b << 8) | (r << 16) | (0xFF << 24);
+		int r = mathClamp(((color >> 16) & 0x00FF) - amount, 0, 0xFF);
+		int g = mathClamp(((color >> 8) & 0x0000FF) - amount, 0, 0xFF);
+		int b = mathClamp(((color)& 0x000000FF) - amount, 0, 0xFF);
+		return b | (g << 8) | (r << 16) | (0xFF << 24);
+	}
+
+	public static int mathClamp(int a, int low, int high){
+		if (a < low ) a = low;
+		if (a > high) a = high;
+		return a;
 	}
 }

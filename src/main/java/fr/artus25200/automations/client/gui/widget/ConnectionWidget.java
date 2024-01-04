@@ -6,11 +6,7 @@ package fr.artus25200.automations.client.gui.widget;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import fr.artus25200.automations.client.AutomationsClient;
-import fr.artus25200.automations.client.gui.screen.AutomationScreen;
-import fr.artus25200.automations.common.Automations;
-import fr.artus25200.automations.common.NodeWrapper;
 import fr.artus25200.automations.common.node.Connection;
-import fr.artus25200.automations.common.node.Node;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.Drawable;
@@ -33,16 +29,19 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 
 	public ConnectionWidget(Connection connection){
 		this.connection   = connection;
-		this.outputWidget = AutomationsClient.nodeWrapper.outputs.get(connection.output);
-		this.inputWidget  = AutomationsClient.nodeWrapper.inputs.get(connection.input);
+		this.outputWidget = AutomationsClient.nodeList.outputs.get(connection.output);
+		this.inputWidget  = AutomationsClient.nodeList.inputs.get(connection.input);
 	}
 
 	@Override
 	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-		drawLine(3, connection.output.x + 4, connection.output.y + 4, connection.input.x + 4, connection.input.y + 4, outputWidget.output.color);
+		//int color = isMouseOver(mouseX, mouseY) ? AutomationsClient.darkenColor(outputWidget.output.color, 50) : outputWidget.output.color;
+		int color = outputWidget.output.color;
+		drawLine(3, connection.output.x + 4, connection.output.y + 4, connection.input.x + 4, connection.input.y + 4, color);
 	}
 
 	public static void drawLine(int width, int x1, int y1, int x2, int y2, int color){
+
 		Tessellator tl = Tessellator.getInstance();
 		BufferBuilder bb = tl.getBuffer();
 
@@ -78,8 +77,36 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 
 	@Override
 	public boolean isMouseOver(double mouseX, double mouseY) {
-		int var = Math.abs(this.inputWidget.y - this.outputWidget.y) / Math.abs(this.inputWidget.x - this.outputWidget.x);
-		return Math.abs(mouseX * var - mouseY) <= 3;
+		// x3 : mouseX
+		// y3 : mouseY
+		// x1 : this.outputWidget.x
+		// y1 : this.outputWidget.y
+		// x2 : this.inputWidget.x
+		// y2 : this.inputWidget.y
+		int inputWidgetX = this.inputWidget.x + 4;
+		int inputWidgetY = this.inputWidget.y + 4;
+		int outputWidgetX = this.outputWidget.x + 4;
+		int outputWidgetY = this.outputWidget.y + 4;
+
+
+		// source : https://stackoverflow.com/a/2233538
+		float px=inputWidgetX-outputWidgetX;
+		float py=inputWidgetY-outputWidgetY;
+		float temp=(px*px)+(py*py);
+		float u = (float) (((mouseX - outputWidgetX) * px + (mouseY - outputWidgetY) * py) / (temp));
+		if(u>1){
+			u=1;
+		}
+		else if(u<0){
+			u=0;
+		}
+		float x = outputWidgetX + u * px;
+		float y = outputWidgetY + u * py;
+
+		float dx = (float) (x - mouseX);
+		float dy = (float) (y - mouseY);
+		double dist = Math.sqrt(dx*dx + dy*dy);
+		return dist <= 4;
 	}
 
 	@Override
@@ -95,9 +122,7 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 	@Override
 	public ContextMenuWidget onRightCLick(double mouseX, double mouseY) {
 		List<ContextMenuWidget.MenuEntry> entries = new ArrayList<>();
-		entries.add(new ContextMenuWidget.MenuEntry("Delete", (connectionWidget) -> {
-			((ConnectionWidget) connectionWidget).delete();
-		}));
+		entries.add(new ContextMenuWidget.MenuEntry("Delete", (connectionWidget) -> ((ConnectionWidget) connectionWidget).delete()));
 		return new ContextMenuWidget((int)mouseX, (int)mouseY, this, entries);
 	}
 }

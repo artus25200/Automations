@@ -4,10 +4,10 @@
 
 package fr.artus25200.automations.client.gui.widget;
 
+import com.google.gson.Gson;
 import fr.artus25200.automations.client.AutomationsClient;
 import fr.artus25200.automations.client.gui.screen.AutomationScreen;
 import fr.artus25200.automations.common.Automations;
-import fr.artus25200.automations.common.node.Connection;
 import fr.artus25200.automations.common.node.Input;
 import fr.artus25200.automations.common.node.Node;
 import fr.artus25200.automations.common.node.Output;
@@ -22,7 +22,6 @@ import net.minecraft.client.util.math.MatrixStack;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -54,9 +53,9 @@ public class NodeWidget implements Drawable, Element, Selectable, Serializable, 
 			outputs.put(o, new OutputWidget(o, this));
 		}
 
-		AutomationsClient.nodeWrapper.nodes.put(node, this);
-		AutomationsClient.nodeWrapper.outputs.putAll(outputs);
-		AutomationsClient.nodeWrapper.inputs.putAll(inputs);
+		AutomationsClient.nodeList.nodes.put(node, this);
+		AutomationsClient.nodeList.outputs.putAll(outputs);
+		AutomationsClient.nodeList.inputs.putAll(inputs);
 	}
 
 	public void delete(){
@@ -69,6 +68,7 @@ public class NodeWidget implements Drawable, Element, Selectable, Serializable, 
 			if(iw.connectionWidget != null) iw.connectionWidget.delete();
 		}
 		this.node.delete();
+
 	}
 
 	@Override
@@ -183,14 +183,16 @@ public class NodeWidget implements Drawable, Element, Selectable, Serializable, 
 				maxOutputWidth = w;
 			}
 		}
+		this.width = 5 + margin + maxInputWidth + margin + maxOutputWidth + margin + 5;
+		if(getTr().getWidth(this.node.getName()) + margin*2 > this.width){
+			this.width = getTr().getWidth(this.node.getName()) + margin*2;
+		}
 
 		for (int i = 0; i < this.outputs.size(); i++) {
 			OutputWidget o = this.outputs.values().stream().toList().get(i);
-			o.x = this.x + 5 + margin + maxInputWidth + margin + maxOutputWidth + margin;
+			o.x = this.x + this.width - 5;
 			o.y = this.y + (i + 1) * (margin + fontheight) + margin;
 		}
-
-		this.width = 5 + margin + maxInputWidth + margin + maxOutputWidth + margin + 5;
 
 		int maxIOSize = Math.max(this.inputs.size(), this.outputs.size());
 		this.height = (maxIOSize + 1)*(margin + fontheight) + margin;
@@ -204,9 +206,10 @@ public class NodeWidget implements Drawable, Element, Selectable, Serializable, 
 			AutomationScreen.instance.reload();
 		}));
 		entries.add(new ContextMenuWidget.MenuEntry("Duplicate", (nodeWidget) -> {
-			Node duplicatedNode = AutomationsClient.nodeWrapper.getNode((NodeWidget) nodeWidget).getClass().getConstructor().newInstance();
+			Node original = ((NodeWidget)nodeWidget).node;
+			Node duplicatedNode = (Node) Automations.duplicateObject(original);
 			AutomationScreen.instance.addNode(duplicatedNode);
 		}));
-		return new ContextMenuWidget((int)mouseX, (int)mouseY, this, entries);
+		return new ContextMenuWidget((int) mouseX, (int) mouseY, this, entries);
 	}
 }
