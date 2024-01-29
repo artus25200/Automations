@@ -8,6 +8,7 @@ import fr.artus25200.automations.client.AutomationsClient;
 import fr.artus25200.automations.client.gui.screen.AutomationScreen;
 import fr.artus25200.automations.common.node.Connection;
 import fr.artus25200.automations.common.node.Output;
+import fr.artus25200.automations.common.node.RedirectNode;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.Drawable;
@@ -80,16 +81,16 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 	public boolean mouseReleased(double mouseX, double mouseY, int button) {
 		if(!this.dragging) return true;
 		this.dragging = false;
-		loop:
 		for (NodeWidget nodeWidget : AutomationsClient.nodeList.nodes.values()) {
 			for (InputWidget inputWidget : nodeWidget.inputs.values()) {
 				if (this.output.getType() == null) continue;
 				if (inputWidget.isMouseOver(mouseX, mouseY) && inputWidget.input.getType().isAssignableFrom(this.output.getType())) {
 					AutomationScreen.createConnection(this, inputWidget);
-					break loop;
+					return true;
 				}
 			}
 		}
+		AutomationScreen.instance.queueAddRedirectNode(this);
 		return true;
 	}
 

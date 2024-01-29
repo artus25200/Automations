@@ -10,6 +10,7 @@ import fr.artus25200.automations.client.gui.widget.*;
 import fr.artus25200.automations.common.networking.ModNetworking;
 import fr.artus25200.automations.common.node.Connection;
 import fr.artus25200.automations.common.node.Node;
+import fr.artus25200.automations.common.node.RedirectNode;
 import fr.artus25200.automations.common.node.data.DataNode;
 import fr.artus25200.automations.common.node.data.field.Editable;
 import net.fabricmc.api.EnvType;
@@ -22,12 +23,15 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.Vec2f;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import static fr.artus25200.automations.client.gui.widget.ConnectionWidget.drawLine;
 
 @Environment(EnvType.CLIENT)
 public class AutomationScreen extends Screen implements RightClickable{
@@ -44,6 +48,9 @@ public class AutomationScreen extends Screen implements RightClickable{
 
     public boolean saved;
 
+    private OutputWidget queuedRedirectOutputWidget;
+    private boolean queuedRedirect;
+
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         this.renderBackground(matrices);
@@ -51,16 +58,18 @@ public class AutomationScreen extends Screen implements RightClickable{
         if(contextMenuWidget!= null) contextMenuWidget.render(matrices, mouseX, mouseY, delta);
     }
 
-    public void addNode(Node n, int x, int y){
+    public NodeWidget addNode(Node n, int x, int y){
         NodeWidget nodeWidget;
         if(n instanceof DataNode && n instanceof Editable){
             nodeWidget = new EditableDataNodeWidget(n, x, y);
-        }
-        else {
+        } else if (n instanceof RedirectNode) {
+            nodeWidget = new RedirectNodeWidget(n, x, y);
+        } else {
             nodeWidget = new NodeWidget(n, x, y);
         }
         AutomationsClient.nodeList.nodes.put(n, nodeWidget);
         this.refresh();
+        return nodeWidget;
     }
 
     public void addNode(Node n){
@@ -138,6 +147,15 @@ public class AutomationScreen extends Screen implements RightClickable{
         for (Element e : this.children()) {
             e.mouseReleased(mouseX, mouseY, button);
         }
+        if(queuedRedirect){
+            RedirectNode redirectNode = new RedirectNode();
+            RedirectNodeWidget redirectNodeWidget = (RedirectNodeWidget) this.addNode(redirectNode, (int) mouseX, (int)mouseY);
+            redirectNodeWidget.x = (int) mouseX;
+            redirectNodeWidget.y = (int) mouseY;
+            AutomationScreen.createConnection(queuedRedirectOutputWidget, redirectNodeWidget.inputWidget);
+            queuedRedirectOutputWidget = null;
+            queuedRedirect = false;
+        }
         return true;
     }
 
@@ -213,5 +231,20 @@ public class AutomationScreen extends Screen implements RightClickable{
             }
         }
         return super.keyPressed(keyCode, scanCode, modifiers);
+    }
+
+    public void queueAddRedirectNode(OutputWidget outputWidget){
+        this.queuedRedirectOutputWidget = outputWidget;
+        this.queuedRedirect = true;
+    }
+
+    public static Vec2f bezier(double t, Vec2f start, Vec2f end, Vec2f p1, Vec2f p2){
+        return start.multiply((float) Math.pow(1-t, 3)).add(p1.multiply((float) (t*3* Math.pow(1-t, 2)))).add(p2.multiply((float) (3*(1-t)*t*t))).add(end.multiply((float) Math.pow(t,3)));
+    }
+
+    public static Vec2f bezierNodeConnection(double t, Vec2f start, Vec2f end){
+        Vec2f p1 = new Vec2f((float) (start.x + 0.75 * (end.x - start.x)), start.y);
+        Vec2f p2 = new Vec2f((float) (end.x - 0.75 * (end.x - start.x)), end.y);
+        return bezier(t, start, end, p1, p2);
     }
 }

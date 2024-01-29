@@ -20,7 +20,7 @@ public abstract class Node implements Serializable {
         if(inputs.isEmpty()) return this.onExecute();
         for (Input input : inputs) {
             if(!input.isConnected()) return false;
-            if(input.connector.output.parent instanceof DataNode) {
+            if(input.connector.output.parent instanceof DataNode || input.connector.output.parent instanceof RedirectNode) {
                 if(!input.connector.output.parent.Execute()) return false;
             }
         }

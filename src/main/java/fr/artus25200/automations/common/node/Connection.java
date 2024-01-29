@@ -14,7 +14,8 @@ public class Connection implements Serializable {
 		this.output = o;
 		this.input = i;
 		o.connections.add(this);
-		i.connector = this;
+		if(i != null)
+			i.connector = this;
 		//Automations.nodeWrapper.connections.add(this);
 	}
 

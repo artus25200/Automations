@@ -48,6 +48,10 @@ public class Nodes {
 	//CONDITION
 	public static final Node IF_CONDITION_NODE;
 
+
+	//OTHERS
+	public static final Node REDIRECT_NODE;
+
 	public static void registerNodes() {}
 
 	private static Node register(String id, Node node) {
@@ -79,6 +83,9 @@ public class Nodes {
 
 		//CONDITION
 		IF_CONDITION_NODE = register("if_condition_node", new IfConditionNode());
+
+		//OTHERS
+		REDIRECT_NODE = register("redirect_node", new RedirectNode());
 	}
 
 	public enum NodeCategory {
