@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "automations",
+  "version": "${version}",
+  "name": "Automations",
+  "description": "A Minecraft mod to automate things. The goal is to be able to easily create simple plugins.",
+  "authors": [
+    "Artus25200"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net",
+    "sources": ""
+  },
+  "license": "MIT",
+  "icon": "assets/automations/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "fr.artus25200.automations.common.Automations"
+    ],
+    "client": [
+      "fr.artus25200.automations.client.AutomationsClient"
+    ]
+  },
+  "mixins": [
+    "automations.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": "*",
+    "minecraft": "~26.3",
+    "java": ">=25"
+  }
+}

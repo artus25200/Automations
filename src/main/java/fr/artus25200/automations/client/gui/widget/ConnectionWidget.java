@@ -4,29 +4,24 @@
 
 package fr.artus25200.automations.client.gui.widget;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import fr.artus25200.automations.client.AutomationsClient;
-import fr.artus25200.automations.client.gui.screen.AutomationScreen;
-import fr.artus25200.automations.common.Automations;
-import fr.artus25200.automations.common.node.Connection;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
-import net.minecraft.client.gui.Drawable;
-import net.minecraft.client.gui.Element;
-import net.minecraft.client.gui.Selectable;
-import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
-import net.minecraft.client.render.*;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.Pair;
-import net.minecraft.util.math.Vec2f;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.artus25200.automations.client.AutomationsClient;
+import fr.artus25200.automations.client.gui.screen.AutomationScreen;
+import fr.artus25200.automations.common.node.Connection;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.gui.narration.NarratableEntry;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.world.phys.Vec2;
+
 @Environment(EnvType.CLIENT)
-public class ConnectionWidget implements Drawable, Element, Selectable,Serializable, RightClickable {
+public class ConnectionWidget implements Renderable, GuiEventListener, NarratableEntry, Serializable, RightClickable {
 	public Connection connection;
 	public OutputWidget outputWidget;
 	public InputWidget inputWidget;
@@ -37,9 +32,9 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 	private transient int prevX2;
 	private transient int prevY2;
 
-	public static final double BEZIER_PRECISION = 10.0;
+	public static final double BEZIER_PRECISION = 20.0;
 	// Points to render lines in between
-	public transient ArrayList<Vec2f> curvePoints = new ArrayList<>();
+	public transient ArrayList<Vec2> curvePoints = new ArrayList<>();
 
 	public ConnectionWidget(Connection connection){
 		this.connection   = connection;
@@ -48,7 +43,7 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 	}
 
 	@Override
-	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 		if(prevX1 != outputWidget.x || prevY1 != outputWidget.y || prevX2 != inputWidget.x || prevY2 != inputWidget.y)
 			calculateBezier();
 		prevX1 = outputWidget.x;
@@ -57,43 +52,29 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 		prevY2 = inputWidget.y;
 		//int color = isMouseOver(mouseX, mouseY) ? AutomationsClient.darkenColor(outputWidget.output.color, 50) : outputWidget.output.color;
 		int color = outputWidget.output.color;
-		renderBezier(color);
+		renderBezier(graphics, color);
 		//drawLine(3, connection.output.x + 4, connection.output.y + 4, connection.input.x + 4, connection.input.y + 4, color);
 	}
 
-	private void renderBezier(int color) {
+	private void renderBezier(GuiGraphicsExtractor graphics, int color) {
 		for (int i = 0; i < curvePoints.size()-1; i++) {
-			drawLine(3, (int) curvePoints.get(i).x+4, (int) curvePoints.get(i).y+4, (int) curvePoints.get(i+1).x+4, (int) curvePoints.get(i+1).y+4, color);
+			drawLine(graphics, 2, (int) curvePoints.get(i).x+4, (int) curvePoints.get(i).y+4, (int) curvePoints.get(i+1).x+4, (int) curvePoints.get(i+1).y+4, color);
 		}
 	}
 
-	public static void drawLine(int width, int x1, int y1, int x2, int y2, int color){
+	public static void drawLine(GuiGraphicsExtractor graphics, int width, int x1, int y1, int x2, int y2, int color){
+		// Tessellator/RenderSystem immediate mode drawing was removed from the game, so the line is now
+		// drawn as a rotated filled rectangle going from (x1, y1) to (x2, y2).
+		float xdiff = x2 - x1;
+		float ydiff = y2 - y1;
+		float length = (float) Math.sqrt(xdiff * xdiff + ydiff * ydiff);
+		if(length == 0) return;
 
-		Tessellator tl = Tessellator.getInstance();
-		BufferBuilder bb = tl.getBuffer();
-
-		RenderSystem.setShader(GameRenderer::getRenderTypeLinesShader);
-		RenderSystem.enableDepthTest();
-		RenderSystem.lineWidth(width);
-		bb.begin(VertexFormat.DrawMode.LINES, VertexFormats.LINES);
-		int xdiff = x2 - x1;
-		int ydiff = y2 - y1;
-		Vec2f v = new Vec2f(xdiff, ydiff).normalize();
-
-		if(ydiff > 0){
-			bb.vertex(x1, y1, 0).color(color).normal(v.x, v.y, 0).next();
-			bb.vertex(x2, y2, 0).color(color).normal(v.x, v.y, 0).next();
-		}else if( ydiff < 0){
-			bb.vertex(x2, y2, 0).color(color).normal(v.x, v.y, 0).next();
-			bb.vertex(x1, y1, 0).color(color).normal(v.x, v.y, 0).next();
-		}
-		else{
-			bb.vertex(x1, y1, 0).color(color).normal(xdiff, ydiff, 0).next();
-			bb.vertex(x2, y2, 0).color(color).normal(xdiff, ydiff, 0).next();
-		}
-
-		BufferRenderer.drawWithShader(bb.end());
-		RenderSystem.enableTexture();
+		graphics.pose().pushMatrix();
+		graphics.pose().translate(x1, y1);
+		graphics.pose().rotate((float) Math.atan2(ydiff, xdiff));
+		graphics.fill(0, -(width / 2), Math.round(length), width - (width / 2), color);
+		graphics.pose().popMatrix();
 	}
 
 	public void delete(){
@@ -103,14 +84,17 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 	}
 
 	public void calculateBezier(){
+        if(curvePoints == null) curvePoints = new ArrayList<>();
 		curvePoints.removeAll(curvePoints.stream().toList());
 		double t=0;
-		Vec2f start = new Vec2f(outputWidget.x, outputWidget.y);
-		Vec2f end = new Vec2f(inputWidget.x, inputWidget.y);
+		Vec2 start = new Vec2(outputWidget.x, outputWidget.y);
+		Vec2 end = new Vec2(inputWidget.x, inputWidget.y);
 		while (t<=1){
 			curvePoints.add(AutomationScreen.bezierNodeConnection(t, start, end));
 			t=t+(1/BEZIER_PRECISION);
 		}
+
+		curvePoints.add(AutomationScreen.bezierNodeConnection(1, start, end));
 	}
 
 	@Override
@@ -148,14 +132,20 @@ public class ConnectionWidget implements Drawable, Element, Selectable,Serializa
 	}
 
 	@Override
-	public SelectionType getType() {
-		return null;
+	public NarrationPriority narrationPriority() {
+		return NarrationPriority.NONE;
 	}
 
 	@Override
-	public void appendNarrations(NarrationMessageBuilder builder) {
+	public void updateNarration(NarrationElementOutput builder) {
 
 	}
+
+	@Override
+	public void setFocused(boolean focused) {}
+
+	@Override
+	public boolean isFocused() { return false; }
 
 	@Override
 	public ContextMenuWidget onRightCLick(double mouseX, double mouseY) {

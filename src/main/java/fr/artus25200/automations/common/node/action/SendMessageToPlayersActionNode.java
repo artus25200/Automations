@@ -7,13 +7,17 @@ package fr.artus25200.automations.common.node.action;
 import fr.artus25200.automations.common.customTypes.EntityList;
 import fr.artus25200.automations.common.node.Input;
 import fr.artus25200.automations.common.node.Nodes;
-import net.minecraft.entity.Entity;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
-
-import java.util.List;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 
 public class SendMessageToPlayersActionNode extends ActionNode{
+
+    public SendMessageToPlayersActionNode(){
+        super();
+        this.categories.add(Nodes.NodeCategory.CHAT);
+        this.categories.add(Nodes.NodeCategory.PLAYER);
+    }
 
 	@Override
 	public void setInputs() {
@@ -30,7 +34,7 @@ public class SendMessageToPlayersActionNode extends ActionNode{
 	@Override
 	public boolean onExecute() {
 		for(Entity player : ((EntityList)this.inputs.get(1).getValue()).entities){
-			((ServerPlayerEntity)player).sendMessage(Text.literal((String) this.inputs.get(2).getValue()));
+			((ServerPlayer)player).sendSystemMessage(Component.literal((String) this.inputs.get(2).getValue()));
 		}
 		return true;
 	}
@@ -40,8 +44,4 @@ public class SendMessageToPlayersActionNode extends ActionNode{
 		return "Send Chat Message";
 	}
 
-	@Override
-	public Nodes.NodeCategory[] getCategories() {
-		return new Nodes.NodeCategory[]{Nodes.NodeCategory.ACTION, Nodes.NodeCategory.CHAT, Nodes.NodeCategory.PLAYER};
-	}
 }

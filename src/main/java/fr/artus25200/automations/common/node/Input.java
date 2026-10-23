@@ -1,6 +1,6 @@
 package fr.artus25200.automations.common.node;
 
-import fr.artus25200.automations.client.AutomationsClient;
+import fr.artus25200.automations.common.Automations;
 
 import java.io.Serializable;
 
@@ -20,7 +20,7 @@ public class Input implements Serializable {
         this.parent = parent;
         this.name = name;
         this.type = type;
-        this.color = AutomationsClient.getColor(type);
+        this.color = Automations.getColor(type);
         ClassTypeJson = type.getName();
     }
 

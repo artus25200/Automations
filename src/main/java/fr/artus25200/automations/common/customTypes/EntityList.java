@@ -4,7 +4,7 @@
 
 package fr.artus25200.automations.common.customTypes;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.Entity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

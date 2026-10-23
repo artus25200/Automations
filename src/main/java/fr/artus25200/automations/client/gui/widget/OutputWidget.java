@@ -11,12 +11,13 @@ import fr.artus25200.automations.common.node.Output;
 import fr.artus25200.automations.common.node.RedirectNode;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.Drawable;
-import net.minecraft.client.gui.DrawableHelper;
-import net.minecraft.client.gui.Element;
-import net.minecraft.client.gui.Selectable;
-import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
-import net.minecraft.client.util.math.MatrixStack;
+import com.mojang.blaze3d.platform.InputConstants;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.gui.narration.NarratableEntry;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.client.input.MouseButtonEvent;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -25,7 +26,7 @@ import static fr.artus25200.automations.client.AutomationsClient.darkenColor;
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
 @Environment(EnvType.CLIENT)
-public class OutputWidget implements Drawable, Selectable, Element, Serializable, RightClickable {
+public class OutputWidget implements Renderable, NarratableEntry, GuiEventListener, Serializable, RightClickable {
 	public static final int widthANDheight = 5;
 
 	public Output output;
@@ -43,23 +44,22 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 			this.connections.put(c, new ConnectionWidget(c));
 		}
 
-		AutomationsClient.nodeList.connections.putAll(connections);
 	}
 
-	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 		int color = isMouseOver(mouseX,mouseY) ? darkenColor(this.output.color, 50) : this.output.color;
 
-		DrawableHelper.fill(matrices, this.x, this.y, this.x + widthANDheight, this.y + widthANDheight, color);
+		graphics.fill(this.x, this.y, this.x + widthANDheight, this.y + widthANDheight, color);
 		if(!(parent instanceof EditableDataNodeWidget)){
-			getTr().draw(matrices, output.name, this.x - getTr().getWidth(output.name) - 5, y, 0xFFFFFFFF);
+			graphics.text(getTr(), output.name, this.x - getTr().width(output.name) - 5, y, 0xFFFFFFFF, false);
 		}
 
 		for (ConnectionWidget cw : connections.values()){
-			cw.render(matrices, mouseX, mouseY, delta);
+			cw.extractRenderState(graphics, mouseX, mouseY, delta);
 		}
 
 		if(this.dragging){
-			ConnectionWidget.drawLine(3, this.x+4, this.y+4, mouseX, mouseY, this.output.color);
+			ConnectionWidget.drawLine(graphics, 3, this.x+4, this.y+4, mouseX, mouseY, this.output.color);
 		}
 	}
 
@@ -69,8 +69,11 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 	}
 
 	@Override
-	public boolean mouseClicked(double mouseX, double mouseY, int button) {
-		if(this.isMouseOver(mouseX, mouseY) && button == 0){
+	public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+		double mouseX = event.x();
+		double mouseY = event.y();
+		int button = event.button();
+		if(this.isMouseOver(mouseX, mouseY) && button == InputConstants.MOUSE_BUTTON_LEFT){
 			dragging = true;
 			return true;
 		}
@@ -78,7 +81,9 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 	}
 
 	@Override
-	public boolean mouseReleased(double mouseX, double mouseY, int button) {
+	public boolean mouseReleased(MouseButtonEvent event) {
+		double mouseX = event.x();
+		double mouseY = event.y();
 		if(!this.dragging) return true;
 		this.dragging = false;
 		for (NodeWidget nodeWidget : AutomationsClient.nodeList.nodes.values()) {
@@ -97,14 +102,20 @@ public class OutputWidget implements Drawable, Selectable, Element, Serializable
 
 
 	@Override
-	public SelectionType getType() {
-		return SelectionType.HOVERED;
+	public NarrationPriority narrationPriority() {
+		return NarrationPriority.HOVERED;
 	}
 
 	@Override
-	public void appendNarrations(NarrationMessageBuilder builder) {
+	public void updateNarration(NarrationElementOutput builder) {
 
 	}
+
+	@Override
+	public void setFocused(boolean focused) {}
+
+	@Override
+	public boolean isFocused() { return false; }
 
 	@Override
 	public ContextMenuWidget onRightCLick(double mouseX, double mouseY) {

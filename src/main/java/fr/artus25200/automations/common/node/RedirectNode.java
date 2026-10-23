@@ -36,8 +36,4 @@ public class RedirectNode extends Node{
 		return 0xFFFFFFFF;
 	}
 
-	@Override
-	public Nodes.NodeCategory[] getCategories() {
-		return new Nodes.NodeCategory[0];
-	}
 }

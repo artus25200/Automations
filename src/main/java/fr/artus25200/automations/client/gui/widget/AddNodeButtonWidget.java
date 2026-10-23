@@ -7,9 +7,10 @@ package fr.artus25200.automations.client.gui.widget;
 import fr.artus25200.automations.client.gui.screen.AutomationScreen;
 import fr.artus25200.automations.common.Automations;
 import fr.artus25200.automations.common.node.Node;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.network.chat.Component;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,7 +20,7 @@ public class AddNodeButtonWidget extends CButtonWidget{
 
 	Screen parent;
 
-	public AddNodeButtonWidget(Node node, int color, int x, int y, int width, int height, Text message, double mouseX, double mouseY, Screen parent) {
+	public AddNodeButtonWidget(Node node, int color, int x, int y, int width, int height, Component message, double mouseX, double mouseY, Screen parent) {
 		super(color, x, y, width, height, message, (button)->{
 
 		});
@@ -30,7 +31,7 @@ public class AddNodeButtonWidget extends CButtonWidget{
 	}
 
 	@Override
-	public void onClick(double mouseX, double mouseY) {
+	public void onClick(MouseButtonEvent event, boolean doubleClick) {
 		Node duplicatedNode;
 		/*try {
 			if(node instanceof FieldDataNode<?> fieldDataNode){
@@ -51,7 +52,9 @@ public class AddNodeButtonWidget extends CButtonWidget{
 		} catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
 			throw new RuntimeException(e);
 		}
-		((AutomationScreen)parent).addNode(duplicatedNode, (int) this.mouseX, (int) this.mouseY);
-		MinecraftClient.getInstance().setScreen(parent);
+        duplicatedNode.x = (int) this.mouseX;
+        duplicatedNode.y = (int) this.mouseY;
+		((AutomationScreen)parent).addNode(duplicatedNode);
+		Minecraft.getInstance().gui.setScreen(parent);
 	}
 }

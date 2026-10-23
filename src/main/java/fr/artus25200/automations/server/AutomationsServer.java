@@ -57,7 +57,7 @@ public class AutomationsServer {
 		catch(IOException | ClassNotFoundException e){
 			String newName = "nodes_old_"+java.time.LocalDateTime.now();
 			if (e.getClass() == InvalidClassException.class && nodeFile.toFile().renameTo(configDir.resolve(newName).toFile())){
-				Automations.LOGGER.error("The Nodes save file version is incompatible with the current version of the mod. It has been renamed to " + newName + " And a new nodes file has been created");
+				Automations.LOGGER.error("The Nodes save file version is incompatible with the current version of the mod. It has been renamed to " + newName + " and a new nodes file has been created");
 				readNodesFromFile();
 			}
 			else {

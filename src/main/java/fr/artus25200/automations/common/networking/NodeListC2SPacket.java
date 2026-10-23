@@ -6,21 +6,33 @@ package fr.artus25200.automations.common.networking;
 
 import fr.artus25200.automations.common.NodeList;
 import fr.artus25200.automations.server.AutomationsServer;
-import net.fabricmc.fabric.api.networking.v1.PacketSender;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.network.ServerPlayNetworkHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.server.permissions.Permissions;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class NodeListC2SPacket {
-	public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler, PacketByteBuf buf, PacketSender responseSender){
-		if(!player.hasPermissionLevel(4)) return;
+
+	public record Payload(byte[] data) implements CustomPacketPayload {
+		public static final Type<Payload> TYPE = new Type<>(ModNetworking.NODE_LIST_C2S_PACKET_ID);
+		public static final StreamCodec<RegistryFriendlyByteBuf, Payload> CODEC = StreamCodec.composite(ByteBufCodecs.BYTE_ARRAY, Payload::data, Payload::new);
+
+		@Override
+		public Type<? extends CustomPacketPayload> type() {
+			return TYPE;
+		}
+	}
+
+	public static void receive(Payload payload, ServerPlayNetworking.Context context){
+		if(!context.player().permissions().hasPermission(Permissions.COMMANDS_OWNER)) return;
 		try {
-			byte[] array = buf.readByteArray();
+			byte[] array = payload.data();
 			ByteArrayInputStream inputStream = new ByteArrayInputStream(array);
 			ObjectInputStream is = new ObjectInputStream(inputStream);
 			AutomationsServer.nodeList = (NodeList) is.readObject();

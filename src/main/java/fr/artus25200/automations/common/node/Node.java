@@ -1,6 +1,5 @@
 package fr.artus25200.automations.common.node;
 
-import fr.artus25200.automations.client.AutomationsClient;
 import fr.artus25200.automations.common.node.data.DataNode;
 
 import java.io.Serializable;
@@ -8,8 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Node implements Serializable {
+    public List<Nodes.NodeCategory> categories = new ArrayList<>();
     public List<Input> inputs = new ArrayList<>();
     public List<Output> outputs = new ArrayList<>();
+
+    public int x,y;
 
     public Node() {
         this.setInputs();
@@ -27,9 +29,6 @@ public abstract class Node implements Serializable {
         return this.onExecute();
     }
 
-    public void delete(){
-        AutomationsClient.nodeList.nodes.remove(this);
-    }
 
     public abstract void setInputs();
 
@@ -41,6 +40,5 @@ public abstract class Node implements Serializable {
 
     public abstract int getColor();
 
-    public abstract Nodes.NodeCategory[] getCategories();
 }
 

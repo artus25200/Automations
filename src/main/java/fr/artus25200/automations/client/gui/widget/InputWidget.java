@@ -7,20 +7,24 @@ package fr.artus25200.automations.client.gui.widget;
 import fr.artus25200.automations.common.node.Input;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.Drawable;
-import net.minecraft.client.gui.DrawableHelper;
-import net.minecraft.client.gui.Element;
-import net.minecraft.client.gui.Selectable;
-import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
-import net.minecraft.client.util.math.MatrixStack;
+
+import com.mojang.blaze3d.platform.InputConstants;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.gui.narration.NarratableEntry;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.client.input.MouseButtonEvent;
 
 import java.io.Serializable;
 
 import static fr.artus25200.automations.client.AutomationsClient.darkenColor;
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
+
+
 @Environment(EnvType.CLIENT)
-public class InputWidget implements Drawable, Selectable, Element, Serializable, RightClickable {
+public class InputWidget implements Renderable, NarratableEntry, GuiEventListener, Serializable, RightClickable {
 	public Input input;
 	public NodeWidget parent;
 	public ConnectionWidget connectionWidget;
@@ -29,16 +33,17 @@ public class InputWidget implements Drawable, Selectable, Element, Serializable,
 
 	public InputWidget(Input input, NodeWidget parent){
 		this.input = input;
-		this.parent = parent;
+
+        this.parent = parent;
 	}
 
 	@Override
-	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 		int color = isMouseOver(mouseX, mouseY) ? darkenColor(this.input.color, 50) : this.input.color;
 
-		DrawableHelper.fill(matrices, x, y, x+5, y+5, color);
+		graphics.fill(x, y, x+5, y+5, color);
 		int textColor = this.input.isConnected() ? 0xFFFFFFFF : 0xFFFF0000;
-		getTr().draw(matrices, input.name, x + 2 + 5, y, textColor);
+		graphics.text(getTr(), input.name, x + 2 + 5, y, textColor, false);
 	}
 
 	@Override
@@ -47,8 +52,11 @@ public class InputWidget implements Drawable, Selectable, Element, Serializable,
 	}
 
 	@Override
-	public boolean mouseClicked(double mouseX, double mouseY, int button) {
-		if(isMouseOver(mouseX, mouseY) && button == 1){
+	public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+		double mouseX = event.x();
+		double mouseY = event.y();
+		int button = event.button();
+		if(isMouseOver(mouseX, mouseY) && button == InputConstants.MOUSE_BUTTON_RIGHT){
 			this.connectionWidget.delete();
 			return true;
 		}
@@ -56,10 +64,16 @@ public class InputWidget implements Drawable, Selectable, Element, Serializable,
 	}
 
 	@Override
-	public SelectionType getType() { return SelectionType.HOVERED; }
+	public NarrationPriority narrationPriority() { return NarrationPriority.HOVERED; }
 
 	@Override
-	public void appendNarrations(NarrationMessageBuilder builder) {}
+	public void updateNarration(NarrationElementOutput builder) {}
+
+	@Override
+	public void setFocused(boolean focused) {}
+
+	@Override
+	public boolean isFocused() { return false; }
 
 	@Override
 	public ContextMenuWidget onRightCLick(double mouseX, double mouseY) {

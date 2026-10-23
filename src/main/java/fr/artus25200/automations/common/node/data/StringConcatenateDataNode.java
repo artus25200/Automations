@@ -5,9 +5,16 @@
 package fr.artus25200.automations.common.node.data;
 
 import fr.artus25200.automations.common.node.Input;
+import fr.artus25200.automations.common.node.Nodes;
 import fr.artus25200.automations.common.node.Output;
 
 public class StringConcatenateDataNode extends DataNode {
+
+
+    public StringConcatenateDataNode(){
+        super();
+        this.categories.add(Nodes.NodeCategory.FIELD);
+    }
 
 	@Override
 	public void setInputs() {

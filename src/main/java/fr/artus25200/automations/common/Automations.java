@@ -4,19 +4,17 @@
 
 package fr.artus25200.automations.common;
 
-import com.google.gson.Gson;
-import fr.artus25200.automations.common.node.Node;
-import fr.artus25200.automations.server.AutomationsServer;
-import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.registry.SimpleRegistry;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import java.io.IOException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import fr.artus25200.automations.common.networking.ModNetworking;
+import fr.artus25200.automations.common.node.Nodes;
+import fr.artus25200.automations.common.node.action.Action;
+import fr.artus25200.automations.server.AutomationsServer;
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 
 public class Automations implements ModInitializer {
 	public static final String MOD_ID = "automations";
@@ -27,6 +25,11 @@ public class Automations implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing " + MOD_NAME + " " + MOD_VERSION);
+
+		ModNetworking.RegisterPayloadTypes();
+
+		// the registry must be created during mod initialization, it is frozen afterwards
+		Nodes.registerNodes();
 
 		ServerLifecycleEvents.SERVER_STARTED.register((server)-> {
 			try {
@@ -50,5 +53,9 @@ public class Automations implements ModInitializer {
 			
 		}catch (IOException ignored){}*/
 		return obj;
+	}
+    public static int getColor(Class<?> type){
+		if(type == Action.class) return 0xFFfA6161;
+		return 0xFFFFFFFF;
 	}
 }

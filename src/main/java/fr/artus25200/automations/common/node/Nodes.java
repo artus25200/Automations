@@ -17,15 +17,16 @@ import fr.artus25200.automations.common.node.events.BlockBreakEventNode;
 import fr.artus25200.automations.common.node.events.ServerStartEventNode;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.SimpleRegistry;
+import net.minecraft.core.MappedRegistry;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 
 import static fr.artus25200.automations.common.Automations.MOD_ID;
 
 public class Nodes {
 
-	public static final SimpleRegistry<Node> NODE_REGISTERY;
+	public static final MappedRegistry<Node> NODE_REGISTERY;
 
 	//EVENTS
 	public static final Node BLOCK_BREAK_EVENT_NODE;
@@ -55,13 +56,13 @@ public class Nodes {
 	public static void registerNodes() {}
 
 	private static Node register(String id, Node node) {
-		Registry.register(NODE_REGISTERY, new Identifier("automations", id), node);
+		Registry.register(NODE_REGISTERY, Identifier.fromNamespaceAndPath("automations", id), node);
 
 		return node;
 	}
 
 	static {
-		NODE_REGISTERY = FabricRegistryBuilder.createSimple(Node.class, new Identifier(MOD_ID)).attribute(RegistryAttribute.SYNCED).buildAndRegister();
+		NODE_REGISTERY = FabricRegistryBuilder.create(ResourceKey.<Node>createRegistryKey(Identifier.withDefaultNamespace(MOD_ID))).attribute(RegistryAttribute.SYNCED).buildAndRegister();
 
 		//EVENTS
 		BLOCK_BREAK_EVENT_NODE = register("block_break_event_node", new BlockBreakEventNode());
@@ -98,6 +99,7 @@ public class Nodes {
 		ENTITY,
 		BLOCK,
 		ITEM,
-		CHAT
+		CHAT,
+        SERVER
 	}
 }

@@ -7,23 +7,28 @@ package fr.artus25200.automations.client.gui.screen;
 
 import fr.artus25200.automations.client.AutomationsClient;
 import fr.artus25200.automations.client.gui.widget.*;
-import fr.artus25200.automations.common.networking.ModNetworking;
+import fr.artus25200.automations.common.Automations;
+import fr.artus25200.automations.common.networking.NodeListC2SPacket;
 import fr.artus25200.automations.common.node.Connection;
 import fr.artus25200.automations.common.node.Node;
+import fr.artus25200.automations.common.node.Nodes;
 import fr.artus25200.automations.common.node.RedirectNode;
+import fr.artus25200.automations.common.node.action.Action;
+import fr.artus25200.automations.common.node.action.ActionNode;
 import fr.artus25200.automations.common.node.data.DataNode;
 import fr.artus25200.automations.common.node.data.field.Editable;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.Element;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.text.Text;
-import net.minecraft.util.math.Vec2f;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.phys.Vec2;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -31,7 +36,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import static fr.artus25200.automations.client.gui.widget.ConnectionWidget.drawLine;
 
 @Environment(EnvType.CLIENT)
 public class AutomationScreen extends Screen implements RightClickable{
@@ -39,7 +43,7 @@ public class AutomationScreen extends Screen implements RightClickable{
     public static AutomationScreen instance;
 
     public AutomationScreen() {
-        super(Text.literal("Automations Configuration Screen"));
+        super(Component.literal("Automations Configuration Screen"));
     }
 
     public ContextMenuWidget contextMenuWidget;
@@ -52,43 +56,26 @@ public class AutomationScreen extends Screen implements RightClickable{
     private boolean queuedRedirect;
 
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        this.renderBackground(matrices);
-        super.render(matrices, mouseX, mouseY, delta);
-        if(contextMenuWidget!= null) contextMenuWidget.render(matrices, mouseX, mouseY, delta);
-    }
-
-    public NodeWidget addNode(Node n, int x, int y){
-        NodeWidget nodeWidget;
-        if(n instanceof DataNode && n instanceof Editable){
-            nodeWidget = new EditableDataNodeWidget(n, x, y);
-        } else if (n instanceof RedirectNode) {
-            nodeWidget = new RedirectNodeWidget(n, x, y);
-        } else {
-            nodeWidget = new NodeWidget(n, x, y);
-        }
-        AutomationsClient.nodeList.nodes.put(n, nodeWidget);
-        this.refresh();
-        return nodeWidget;
+    public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+        // the background is extracted by Screen#extractRenderState (see extractBackground below)
+        super.extractRenderState(graphics, mouseX, mouseY, delta);
+        if(contextMenuWidget!= null) contextMenuWidget.extractRenderState(graphics, mouseX, mouseY, delta);
     }
 
     public void addNode(Node n){
-        this.addNode(n, 100, 100);
+        AutomationsClient.nodeList.savedNodes.add(n);
+        this.refresh();
     }
 
     @Override
-    public void renderBackground(MatrixStack matrices) {
-        this.fillGradient(matrices, 0, 0, this.width, this.height, -1072689136, -804253680);
+    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+        graphics.fillGradient(0, 0, this.width, this.height, -1072689136, -804253680);
     }
 
-    public void reload(){
-        this.init();
-    }
-
-    public void refresh(){
-        this.clearChildren();
+    public void refresh2(){
+        this.clearWidgets();
         AutomationsClient.nodeList.nodes.forEach((node, nodeWidget) -> {
-            this.addDrawableChild(nodeWidget);
+            this.addRenderableWidget(nodeWidget);
             rightClickables.add(nodeWidget);
             rightClickables.addAll(nodeWidget.inputs.values());
             for(OutputWidget o : nodeWidget.outputs.values()){
@@ -96,6 +83,31 @@ public class AutomationScreen extends Screen implements RightClickable{
                 rightClickables.addAll(o.connections.values());
             }
         });
+
+        this.addRenderableWidget(new CButtonWidget(0xFF000000, 10, 10, 100, 20, Component.literal("Save and Reload"), (button) -> this.saveAndReload()));
+
+        this.addRenderableWidget(new CButtonWidget(0xFF000000,120, 10, 100, 20, Component.literal("Add Node"), (button -> Minecraft.getInstance().gui.setScreen(new ChooseNodeScreen(100, 100, this)))));
+    }
+
+    public void refresh(){
+        this.clearWidgets();
+        this.rightClickables.clear();
+
+        AutomationsClient.nodeList.savedNodes.forEach((node) -> {
+                NodeWidget widget = new NodeWidget(node);
+                if(node instanceof DataNode && node instanceof Editable){
+                    widget = new EditableDataNodeWidget(node);
+                } else if (node instanceof RedirectNode) {
+                    widget = new RedirectNodeWidget(node);
+                } else {
+                    widget = new NodeWidget(node);
+                }
+                this.addRenderableWidget(widget);
+                rightClickables.add(widget);
+            });
+
+        this.addRenderableWidget(new CButtonWidget(0xFF000000, 10, 10, 100, 20, Component.literal("Save and Reload"), (button) -> this.saveAndReload()));
+        this.addRenderableWidget(new CButtonWidget(0xFF000000,120, 10, 100, 20, Component.literal("Add Node"), (button -> Minecraft.getInstance().gui.setScreen(new ChooseNodeScreen(100, 100, this)))));
     }
 
     @Override
@@ -104,24 +116,38 @@ public class AutomationScreen extends Screen implements RightClickable{
         instance = this;
         this.refresh();
 
-        this.addDrawableChild(new CButtonWidget(0xFF000000, 10, 10, 100, 20, Text.literal("Save and Reload"), (button) -> this.saveAndReload()));
-
-        this.addDrawableChild(new CButtonWidget(0xFF000000,120, 10, 100, 20, Text.literal("Add Node"), (button -> MinecraftClient.getInstance().setScreen(new ChooseNodeScreen(100, 100, this)))));
     }
 
     public static void createConnection(OutputWidget outputWidget, InputWidget inputWidget){
         if(inputWidget.connectionWidget != null) inputWidget.connectionWidget.delete();
+        // Verify that the connection is allowed.
+        NodeWidget one = outputWidget.parent;
+        NodeWidget two = inputWidget.parent;
+
+        if((one.node.categories.contains(Nodes.NodeCategory.EVENT) || one.node.categories.contains(Nodes.NodeCategory.ACTION)) && two.node.categories.contains(Nodes.NodeCategory.ACTION) && outputWidget.output.getType() != Action.class){
+            if(((ActionNode)two.node).actionInput.isConnected()){
+                if(((ActionNode)two.node).actionInput.connector.output.parent != one.node) return;
+            }
+            else {
+                return;
+            }
+        }
+
+        // end of verification
+
+
         Connection connection = Connection.createConnection(outputWidget.output, inputWidget.input);
         if(connection == null) return;
         ConnectionWidget connectionWidget = new ConnectionWidget(connection);
         outputWidget.connections.put(connection, connectionWidget);
         inputWidget.connectionWidget = connectionWidget;
-        AutomationsClient.nodeList.connections.put(connection, connectionWidget);
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if(button == 1){
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        double mouseX = event.x();
+        double mouseY = event.y();
+        if(event.button() == InputConstants.MOUSE_BUTTON_RIGHT){
             // context Menu
             for(RightClickable rightClickable: this.rightClickables){
                 if(rightClickable.isMouseOver(mouseX, mouseY)){
@@ -132,27 +158,29 @@ public class AutomationScreen extends Screen implements RightClickable{
             contextMenuWidget = this.onRightCLick(mouseX, mouseY);
         } else {
             if(contextMenuWidget != null){
-                contextMenuWidget.mouseClicked(mouseX, mouseY, button);
+                contextMenuWidget.mouseClicked(event, doubleClick);
                 contextMenuWidget = null;
             }
-            for (Element e : this.children()) {
-                if(e.mouseClicked(mouseX, mouseY, button)) return true;
+            for (GuiEventListener e : this.children()) {
+                if(e.mouseClicked(event, doubleClick)) return true;
             }
         }
         return true;
     }
 
     @Override
-    public boolean mouseReleased(double mouseX, double mouseY, int button) {
-        for (Element e : this.children()) {
-            e.mouseReleased(mouseX, mouseY, button);
+    public boolean mouseReleased(MouseButtonEvent event) {
+        double mouseX = event.x();
+        double mouseY = event.y();
+        for (GuiEventListener e : this.children()) {
+            e.mouseReleased(event);
         }
         if(queuedRedirect){
-            RedirectNode redirectNode = new RedirectNode();
-            RedirectNodeWidget redirectNodeWidget = (RedirectNodeWidget) this.addNode(redirectNode, (int) mouseX, (int)mouseY);
-            redirectNodeWidget.x = (int) mouseX;
-            redirectNodeWidget.y = (int) mouseY;
-            AutomationScreen.createConnection(queuedRedirectOutputWidget, redirectNodeWidget.inputWidget);
+            RedirectNode redirectNode =  new RedirectNode();
+            redirectNode.x = (int) mouseX;
+            redirectNode.y = (int) mouseY;
+            this.addNode(redirectNode);
+            AutomationScreen.createConnection(queuedRedirectOutputWidget, ((RedirectNodeWidget)AutomationsClient.nodeList.nodes.get(redirectNode)).inputWidget);
             queuedRedirectOutputWidget = null;
             queuedRedirect = false;
         }
@@ -161,13 +189,13 @@ public class AutomationScreen extends Screen implements RightClickable{
 
     @Override
     public void mouseMoved(double mouseX, double mouseY) {
-        for (Element e : this.children()) {
+        for (GuiEventListener e : this.children()) {
             e.mouseMoved(mouseX, mouseY);
         }
     }
 
     @Override
-    public boolean shouldPause() {
+    public boolean isPauseScreen() {
         return false;
     }
 
@@ -177,9 +205,7 @@ public class AutomationScreen extends Screen implements RightClickable{
             ObjectOutputStream os = new ObjectOutputStream(byteArrayOutputStream);
             os.writeObject(AutomationsClient.nodeList);
             os.close();
-            PacketByteBuf p = PacketByteBufs.create();
-            p.writeByteArray(byteArrayOutputStream.toByteArray());
-            ClientPlayNetworking.send(ModNetworking.NODE_LIST_C2S_PACKET_ID, p);
+            ClientPlayNetworking.send(new NodeListC2SPacket.Payload(byteArrayOutputStream.toByteArray()));
             this.saved = true;
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -190,17 +216,17 @@ public class AutomationScreen extends Screen implements RightClickable{
     public ContextMenuWidget onRightCLick(double mouseX, double mouseY) {
         List<ContextMenuWidget.MenuEntry> entries = new ArrayList<>();
         entries.add(new ContextMenuWidget.MenuEntry("Add Node", (nodeWidget) -> {
-            assert this.client != null;
-            this.client.setScreen(new ChooseNodeScreen(mouseX, mouseY, this));
+            assert this.minecraft != null;
+            this.minecraft.gui.setScreen(new ChooseNodeScreen(mouseX, mouseY, this));
         }));
         entries.add(new ContextMenuWidget.MenuEntry("Save and Quit", (nodeWidget) -> {
             this.saveAndReload();
-            assert this.client != null;
-            this.client.setScreen(null);
+            assert this.minecraft != null;
+            this.minecraft.gui.setScreen(null);
         }));
         entries.add(new ContextMenuWidget.MenuEntry("Quit without Saving", (nodeWidget) -> {
-            assert this.client != null;
-            this.client.setScreen(null);
+            assert this.minecraft != null;
+            this.minecraft.gui.setScreen(null);
         }));
         return new ContextMenuWidget((int)mouseX, (int)mouseY, this, entries);
     }
@@ -211,26 +237,26 @@ public class AutomationScreen extends Screen implements RightClickable{
     }
 
     @Override
-    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if(keyCode == 256){
+    public boolean keyPressed(KeyEvent event) {
+        if(event.key() == InputConstants.KEY_ESCAPE){
             if(saved) {
-                this.close();
+                this.onClose();
                 return true;
             }
             else{
-                assert this.client != null;
-                this.client.setScreen(new ConfirmationScreen(this, (save) -> {
+                assert this.minecraft != null;
+                this.minecraft.gui.setScreen(new ConfirmationScreen(this, (save) -> {
                     if(save) {
                         saveAndReload();
-                        this.close();
+                        this.onClose();
                     }
                     else{
-                        this.close();
+                        this.onClose();
                     }
-                }, Text.literal("Not Saved"), Text.literal("Do you want to quit without saving ?"), Text.literal("Save and quit"), Text.literal("Quit without saving")));
+                }, Component.literal("Not Saved"), Component.literal("Do you want to quit without saving ?"), Component.literal("Save and quit"), Component.literal("Quit without saving")));
             }
         }
-        return super.keyPressed(keyCode, scanCode, modifiers);
+        return super.keyPressed(event);
     }
 
     public void queueAddRedirectNode(OutputWidget outputWidget){
@@ -238,13 +264,13 @@ public class AutomationScreen extends Screen implements RightClickable{
         this.queuedRedirect = true;
     }
 
-    public static Vec2f bezier(double t, Vec2f start, Vec2f end, Vec2f p1, Vec2f p2){
-        return start.multiply((float) Math.pow(1-t, 3)).add(p1.multiply((float) (t*3* Math.pow(1-t, 2)))).add(p2.multiply((float) (3*(1-t)*t*t))).add(end.multiply((float) Math.pow(t,3)));
+    public static Vec2 bezier(double t, Vec2 start, Vec2 end, Vec2 p1, Vec2 p2){
+        return start.scale((float) Math.pow(1-t, 3)).add(p1.scale((float) (t*3* Math.pow(1-t, 2)))).add(p2.scale((float) (3*(1-t)*t*t))).add(end.scale((float) Math.pow(t,3)));
     }
 
-    public static Vec2f bezierNodeConnection(double t, Vec2f start, Vec2f end){
-        Vec2f p1 = new Vec2f((float) (start.x + 0.75 * (end.x - start.x)), start.y);
-        Vec2f p2 = new Vec2f((float) (end.x - 0.75 * (end.x - start.x)), end.y);
+    public static Vec2 bezierNodeConnection(double t, Vec2 start, Vec2 end){
+        Vec2 p1 = new Vec2((float) (start.x + 0.75 * (end.x - start.x)), start.y);
+        Vec2 p2 = new Vec2((float) (end.x - 0.75 * (end.x - start.x)), end.y);
         return bezier(t, start, end, p1, p2);
     }
 }

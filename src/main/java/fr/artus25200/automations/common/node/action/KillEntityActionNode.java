@@ -3,11 +3,19 @@ package fr.artus25200.automations.common.node.action;
 import fr.artus25200.automations.common.customTypes.EntityList;
 import fr.artus25200.automations.common.node.Input;
 import fr.artus25200.automations.common.node.Nodes;
-import net.minecraft.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
 
 import java.util.List;
 
 public class KillEntityActionNode extends ActionNode{
+
+    public KillEntityActionNode(){
+        super();
+        this.categories.add(Nodes.NodeCategory.ENTITY);
+        this.categories.add(Nodes.NodeCategory.PLAYER);
+    }
+
     @Override
     public void setInputs() {
         super.setInputs();
@@ -22,7 +30,7 @@ public class KillEntityActionNode extends ActionNode{
     @Override
     public boolean onExecute() {
         for(Entity e : ((EntityList) this.inputs.get(1).getValue()).entities){
-            e.kill();
+            e.kill((ServerLevel) e.level());
         }
         return true;
     }
@@ -32,8 +40,4 @@ public class KillEntityActionNode extends ActionNode{
         return "Kill Entity";
     }
 
-    @Override
-    public Nodes.NodeCategory[] getCategories() {
-        return new Nodes.NodeCategory[]{Nodes.NodeCategory.ACTION, Nodes.NodeCategory.ENTITY};
-    }
 }

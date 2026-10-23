@@ -4,12 +4,12 @@
 
 package fr.artus25200.automations.client.gui.widget;
 
-import net.minecraft.client.gui.Drawable;
-import net.minecraft.client.gui.DrawableHelper;
-import net.minecraft.client.gui.Element;
-import net.minecraft.client.gui.Selectable;
-import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.gui.narration.NarratableEntry;
+import net.minecraft.client.gui.narration.NarrationElementOutput;
+import net.minecraft.client.input.MouseButtonEvent;
 
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
@@ -17,7 +17,7 @@ import java.util.List;
 
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
-public class ContextMenuWidget implements Drawable, Selectable, Element {
+public class ContextMenuWidget implements Renderable, NarratableEntry, GuiEventListener {
 	public Object clicked;
 	public Class<?> clickedType;
 	public List<MenuEntry> entries;
@@ -33,7 +33,7 @@ public class ContextMenuWidget implements Drawable, Selectable, Element {
 
 		int maxWidth = 0;
 		for (MenuEntry entry : entries) {
-			int width = getTr().getWidth(entry.text);
+			int width = getTr().width(entry.text);
 			maxWidth = Math.max(width, maxWidth);
 
 			entry.parent = this;
@@ -42,27 +42,27 @@ public class ContextMenuWidget implements Drawable, Selectable, Element {
 		width = maxWidth + 3 + 3;
 		for (int i = 0; i < entries.size(); i++) {
 			entries.get(i).x = x + 3;
-			entries.get(i).y = this.y + i * (getTr().fontHeight + 3 + 3);
+			entries.get(i).y = this.y + i * (getTr().lineHeight + 3 + 3);
 			entries.get(i).width = maxWidth;
-			entries.get(i).height = getTr().fontHeight + 3 + 3;
+			entries.get(i).height = getTr().lineHeight + 3 + 3;
 		}
 
-		height = entries.size() * (getTr().fontHeight + 3 + 3);
+		height = entries.size() * (getTr().lineHeight + 3 + 3);
 	}
 
 	@Override
-	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-		DrawableHelper.fill(matrices, x, y-3, x + width, y + height + 3, 0xFF252525);
+	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+		graphics.fill(x, y-3, x + width, y + height + 3, 0xFF252525);
 		for(MenuEntry entry : entries){
-			entry.render(matrices, mouseX, mouseY, delta);
+			entry.extractRenderState(graphics, mouseX, mouseY, delta);
 		}
 	}
 
 	@Override
-	public boolean mouseClicked(double mouseX, double mouseY, int button) {
-		if(this.isMouseOver(mouseX, mouseY)){
+	public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+		if(this.isMouseOver(event.x(), event.y())){
 			for(MenuEntry entry : entries){
-				entry.mouseClicked(mouseX, mouseY, button);
+				entry.mouseClicked(event, doubleClick);
 			}
 			return true;
 		}
@@ -75,16 +75,22 @@ public class ContextMenuWidget implements Drawable, Selectable, Element {
 	}
 
 	@Override
-	public SelectionType getType() {
-		return null;
+	public NarrationPriority narrationPriority() {
+		return NarrationPriority.NONE;
 	}
 
 	@Override
-	public void appendNarrations(NarrationMessageBuilder builder) {
+	public void updateNarration(NarrationElementOutput builder) {
 
 	}
 
-	public static class MenuEntry implements Drawable, Element, Selectable {
+	@Override
+	public void setFocused(boolean focused) {}
+
+	@Override
+	public boolean isFocused() { return false; }
+
+	public static class MenuEntry implements Renderable, GuiEventListener, NarratableEntry {
 		public String text;
 		public MenuAction action;
 		public ContextMenuWidget parent;
@@ -102,14 +108,14 @@ public class ContextMenuWidget implements Drawable, Selectable, Element {
 		}
 
 		@Override
-		public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-			DrawableHelper.fill(matrices, x, y, x + width, y+ height, (isMouseOver(mouseX, mouseY) ? 0xFF626262 : 0xFF252525));
-			DrawableHelper.drawCenteredText(matrices, getTr(), text, x + width/2, y + height/4, 0XFFFFFFFF);
+		public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
+			graphics.fill(x, y, x + width, y+ height, (isMouseOver(mouseX, mouseY) ? 0xFF626262 : 0xFF252525));
+			graphics.centeredText(getTr(), text, x + width/2, y + height/4, 0XFFFFFFFF);
 		}
 
 		@Override
-		public boolean mouseClicked(double mouseX, double mouseY, int button) {
-			if(this.isMouseOver(mouseX, mouseY)){
+		public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+			if(this.isMouseOver(event.x(), event.y())){
 				try {
 
 					action.Action(parent.clicked);
@@ -122,14 +128,20 @@ public class ContextMenuWidget implements Drawable, Selectable, Element {
 		}
 
 		@Override
-		public SelectionType getType() {
-			return null;
+		public NarrationPriority narrationPriority() {
+			return NarrationPriority.NONE;
 		}
 
 		@Override
-		public void appendNarrations(NarrationMessageBuilder builder) {
+		public void updateNarration(NarrationElementOutput builder) {
 
 		}
+
+		@Override
+		public void setFocused(boolean focused) {}
+
+		@Override
+		public boolean isFocused() { return false; }
 	}
 
 	public interface MenuAction{

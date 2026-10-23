@@ -14,6 +14,10 @@ public class IfConditionNode extends Node {
 	public Output actionOutputTrue;
 	public Output actionOutputFalse;
 
+    public IfConditionNode(){
+        this.categories.add(Nodes.NodeCategory.CONDITION);
+    }
+
 	@Override
 	public void setInputs() {
 		this.inputs.add(new Input(this, "action", Action.class));
@@ -43,10 +47,6 @@ public class IfConditionNode extends Node {
 		return 0xFF34eb6b;
 	}
 
-	@Override
-	public Nodes.NodeCategory[] getCategories() {
-		return new Nodes.NodeCategory[]{Nodes.NodeCategory.CONDITION};
-	}
 
 	@Override
 	public boolean Execute() {

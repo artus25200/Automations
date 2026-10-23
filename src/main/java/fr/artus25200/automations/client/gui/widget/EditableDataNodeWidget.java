@@ -9,10 +9,10 @@ import fr.artus25200.automations.client.gui.screen.AutomationScreen;
 import fr.artus25200.automations.client.gui.screen.EditFieldScreen;
 import fr.artus25200.automations.common.node.Node;
 import fr.artus25200.automations.common.node.data.DataNode;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawableHelper;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.Text;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.network.chat.Component;
 
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
@@ -20,27 +20,27 @@ public class EditableDataNodeWidget extends NodeWidget {
 
 	public transient CButtonWidget editButton;
 
-	public EditableDataNodeWidget(Node node, int x, int y) {
-		super(node, x, y);
+	public EditableDataNodeWidget(Node node) {
+		super(node);
 		createEditButton();
 	}
 
 	@Override
-	public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 		calculatePos();
 
-		int fontheight = getTr().fontHeight;
-		DrawableHelper.fill(matrices, x, y, x + width, y + 5 + fontheight + 2, this.node.getColor());
+		int fontheight = getTr().lineHeight;
+		graphics.fill(x, y, x + width, y + 5 + fontheight + 2, this.node.getColor());
 
 		OutputWidget outputWidget = outputs.values().stream().toList().get(0);
 		outputWidget.output.x = outputWidget.x;
 		outputWidget.output.y = outputWidget.y;
-		outputWidget.render(matrices, mouseX, mouseY, delta);
+		outputWidget.extractRenderState(graphics, mouseX, mouseY, delta);
 
-		editButton.render(matrices, mouseX, mouseY, delta);
+		editButton.extractRenderState(graphics, mouseX, mouseY, delta);
 
 
-		getTr().draw(matrices, this.node.getName(), this.x + 5, this.y + 5, 0xFFFFFFFF);
+		graphics.text(getTr(), this.node.getName(), this.x + 5, this.y + 5, 0xFFFFFFFF, false);
 	}
 
 	@Override
@@ -48,13 +48,13 @@ public class EditableDataNodeWidget extends NodeWidget {
 		//TODO: Clean up CButtonwidget == null
 		if(this.editButton== null) createEditButton();
 
-		int fontheight = getTr().fontHeight;
+		int fontheight = getTr().lineHeight;
 		int margin = 5;
 
-		this.editButton.x = this.x + margin + getTr().getWidth(this.node.getName()) + margin;
-		this.editButton.y = this.y + 3;
+		this.editButton.setX(this.x + margin + getTr().width(this.node.getName()) + margin);
+		this.editButton.setY(this.y + 3);
 
-		this.width = margin + getTr().getWidth(this.node.getName()) + margin + 20 + margin + OutputWidget.widthANDheight;
+		this.width = margin + getTr().width(this.node.getName()) + margin + 20 + margin + OutputWidget.widthANDheight;
 		this.height = margin + fontheight + margin;
 
 		OutputWidget o = outputs.values().stream().toList().get(0);
@@ -63,11 +63,13 @@ public class EditableDataNodeWidget extends NodeWidget {
 	}
 
 	@Override
-	public boolean mouseClicked(double mouseX, double mouseY, int button) {
-		if(editButton.mouseClicked(mouseX, mouseY, button)) return true;
+	public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+		double mouseX = event.x();
+		double mouseY = event.y();
+		if(editButton.mouseClicked(event, doubleClick)) return true;
 		for(OutputWidget outputWidget : outputs.values()) {
 			if (outputWidget.isMouseOver(mouseX, mouseY)) {
-				if (outputWidget.mouseClicked(mouseX, mouseY, button)) return true;
+				if (outputWidget.mouseClicked(event, doubleClick)) return true;
 			}
 		}
 		if(this.isMouseOver(mouseX, mouseY)){
@@ -80,6 +82,6 @@ public class EditableDataNodeWidget extends NodeWidget {
 	}
 
 	public void createEditButton(){
-		this.editButton = new CButtonWidget(0xFF101010, x+ 5 + getTr().getWidth(node.getName())+ 5, y + 5, 20, 10, Text.literal("edit"), (b)-> MinecraftClient.getInstance().setScreen(new EditFieldScreen((DataNode) this.node, AutomationScreen.instance)));
+		this.editButton = new CButtonWidget(0xFF101010, x+ 5 + getTr().width(node.getName())+ 5, y + 5, 20, 10, Component.literal("edit"), (b)-> Minecraft.getInstance().gui.setScreen(new EditFieldScreen((DataNode) this.node, AutomationScreen.instance)));
 	}
 }

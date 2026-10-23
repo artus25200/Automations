@@ -1,5 +1,7 @@
 package fr.artus25200.automations.common.node.events;
 
+import java.util.ArrayList;
+
 import fr.artus25200.automations.common.Automations;
 import fr.artus25200.automations.common.node.Node;
 import fr.artus25200.automations.common.node.Nodes;
@@ -15,10 +17,6 @@ public abstract class EventNode extends Node {
         return 0xFFfAEB61;
     }
 
-    @Override
-    public Nodes.NodeCategory[] getCategories() {
-        return new Nodes.NodeCategory[]{Nodes.NodeCategory.EVENT};
-    }
 
     @Override
     public boolean Execute() {

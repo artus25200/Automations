@@ -6,25 +6,24 @@ package fr.artus25200.automations.client.gui.widget;
 
 import fr.artus25200.automations.client.AutomationsClient;
 import fr.artus25200.automations.common.Automations;
-import net.minecraft.client.gui.DrawableHelper;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.network.chat.Component;
 
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
-public class CButtonWidget extends ButtonWidget {
+public class CButtonWidget extends Button {
 	public int color;
 
-	public CButtonWidget(int color, int x, int y, int width, int height, Text message, PressAction onPress) {
-		super(x, y, width, height, message, onPress);
+	public CButtonWidget(int color, int x, int y, int width, int height, Component message, OnPress onPress) {
+		super(x, y, width, height, message, onPress, DEFAULT_NARRATION);
 		this.color = color;
 	}
 
 	@Override
-	public void renderButton(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+	protected void extractContents(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 		int color_ = isMouseOver(mouseX, mouseY) ? AutomationsClient.darkenColor(this.color, 20) : this.color;
-		DrawableHelper.fill(matrices, x, y, x + width, y + height, color_);
-		DrawableHelper.drawCenteredText(matrices, getTr(), getMessage(), this.x + this.width/2, this.y+(this.height-getTr().fontHeight)/2 +1, 0xFFFFFFFF);
+		graphics.fill(getX(), getY(), getX() + getWidth(), getY() + getHeight(), color_);
+		graphics.centeredText(getTr(), getMessage(), this.getX() + this.getWidth()/2, this.getY()+(this.getHeight()-getTr().lineHeight)/2 +1, 0xFFFFFFFF);
 	}
 }

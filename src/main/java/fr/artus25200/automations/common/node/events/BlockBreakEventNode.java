@@ -1,34 +1,36 @@
 package fr.artus25200.automations.common.node.events;
 
-import fr.artus25200.automations.client.AutomationsClient;
 import fr.artus25200.automations.common.Automations;
 import fr.artus25200.automations.common.customTypes.EntityList;
 import fr.artus25200.automations.common.node.Nodes;
 import fr.artus25200.automations.common.node.Output;
 import fr.artus25200.automations.server.AutomationsServer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockBreakEventNode extends EventNode{
 
     public BlockBreakEventNode() {
         super();
-        AutomationsClient.nodeList.blockBreakEvents.add(this);
+        this.categories.add(Nodes.NodeCategory.EVENT);
+        this.categories.add(Nodes.NodeCategory.BLOCK);
+        this.categories.add(Nodes.NodeCategory.PLAYER);
+        this.registerEvent();
     }
 
     @Override
     public void setOutputs() {
         super.setOutputs();
-        this.outputs.add(new Output(this, "World", World.class));
+        this.outputs.add(new Output(this, "World", Level.class));
         this.outputs.add(new Output(this, "BlockPos", BlockPos.class));
         this.outputs.add(new Output(this, "BlockState", BlockState.class));
         this.outputs.add(new Output(this, "Player", EntityList.class));
     }
 
-    public void Execute(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+    public void Execute(Level world, BlockPos pos, BlockState state, Player player) {
         this.outputs.get(1).value = world;
         this.outputs.get(2).value = pos;
         this.outputs.get(3).value = state;
@@ -42,17 +44,9 @@ public class BlockBreakEventNode extends EventNode{
     }
 
     @Override
-    public Nodes.NodeCategory[] getCategories() {
-        return new Nodes.NodeCategory[]{Nodes.NodeCategory.EVENT, Nodes.NodeCategory.BLOCK};
-    }
-
-    @Override
     public void registerEvent() {
         PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, ci) -> {
-            Automations.LOGGER.info("Block broken : " + state.getBlock().getName().toString());
-            for(BlockBreakEventNode e : AutomationsServer.nodeList.blockBreakEvents){
-                e.Execute(world, pos, state, player);
-            }
+                this.Execute(world, pos, state, player);
         });
     }
 }

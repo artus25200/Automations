@@ -4,32 +4,42 @@
 
 package fr.artus25200.automations.client;
 
+import com.mojang.blaze3d.platform.InputConstants;
+
 import fr.artus25200.automations.client.gui.screen.AutomationScreen;
+import fr.artus25200.automations.client.gui.widget.InputWidget;
+import fr.artus25200.automations.client.gui.widget.NodeWidget;
+import fr.artus25200.automations.client.gui.widget.OutputWidget;
+import fr.artus25200.automations.common.Automations;
 import fr.artus25200.automations.common.NodeList;
+import fr.artus25200.automations.common.networking.AskForNodeListC2SPacket;
 import fr.artus25200.automations.common.networking.ModNetworking;
 import fr.artus25200.automations.common.networking.NodeListS2CPacket;
+import fr.artus25200.automations.common.node.Input;
+import fr.artus25200.automations.common.node.Node;
+import fr.artus25200.automations.common.node.Output;
 import fr.artus25200.automations.common.node.action.Action;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.option.StickyKeyBinding;
-import org.lwjgl.glfw.GLFW;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.ToggleKeyMapping;
+import net.minecraft.client.gui.Font;
+import net.minecraft.resources.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class AutomationsClient implements ClientModInitializer {
 
-	private static StickyKeyBinding keyBinding;
+	private static ToggleKeyMapping keyBinding;
 
-	public static TextRenderer tr;
+	public static Font tr;
 	public static boolean shouldOpenNodeScreen = false;
 
-	public static NodeList nodeList;
+	public static NodeList nodeList = new NodeList();
 
 	@Override
 	public void onInitializeClient() {
@@ -39,33 +49,34 @@ public class AutomationsClient implements ClientModInitializer {
 		test();
 	}
 
-	public static TextRenderer getTr(){
-		tr = tr == null ? MinecraftClient.getInstance().textRenderer : tr;
+	public static Font getTr(){
+		tr = tr == null ? Minecraft.getInstance().font : tr;
 		return tr;
 	}
 
 	private static void test(){
-		keyBinding = (StickyKeyBinding) KeyBindingHelper.registerKeyBinding(new StickyKeyBinding(
+		keyBinding = (ToggleKeyMapping) KeyMappingHelper.registerKeyMapping(new ToggleKeyMapping(
 				"node_editor",
-				GLFW.GLFW_KEY_M,
-				"Automations",
-				() -> true
+				InputConstants.KEY_M,
+				KeyMapping.Category.register(Identifier.fromNamespaceAndPath(Automations.MOD_ID, "automations")),
+				() -> true,
+				false
 		));
 
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			if(keyBinding.wasPressed()){
+			if(keyBinding.consumeClick()){
 				openAutomationScreen();
 			}
 			if(shouldOpenNodeScreen){
 				shouldOpenNodeScreen = false;
-				client.setScreen(new AutomationScreen());
+				client.gui.setScreen(new AutomationScreen());
 			}
 		});
 	}
 
 	public static void openAutomationScreen(){
-		ClientPlayNetworking.send(ModNetworking.ASK_FOR_NODE_LIST_C2S_PACKET_ID, PacketByteBufs.create());
+		ClientPlayNetworking.send(new AskForNodeListC2SPacket.Payload());
 		new Thread(()->{
 			while(!NodeListS2CPacket.received){
 				try {
@@ -75,6 +86,10 @@ public class AutomationsClient implements ClientModInitializer {
 				}
 			}
 			NodeListS2CPacket.received = false;
+
+            for(Node n : AutomationsClient.nodeList.savedNodes){
+                 new NodeWidget(n);
+            }
 			shouldOpenNodeScreen = true;
 		}).start();
 	}

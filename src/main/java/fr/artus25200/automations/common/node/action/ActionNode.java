@@ -9,6 +9,10 @@ public abstract class ActionNode extends Node {
     public Input actionInput;
     public Output actionOutput;
 
+    public ActionNode(){
+        this.categories.add(Nodes.NodeCategory.ACTION);
+    }
+
     @Override
     public void setInputs() {
         actionInput = new Input(this, "Action", Action.class);
@@ -35,10 +39,6 @@ public abstract class ActionNode extends Node {
         return 0xFFfA6161;
     }
 
-    @Override
-    public Nodes.NodeCategory[] getCategories() {
-        return new Nodes.NodeCategory[]{Nodes.NodeCategory.ACTION};
-    }
 
     public abstract boolean onExecute();
 }
