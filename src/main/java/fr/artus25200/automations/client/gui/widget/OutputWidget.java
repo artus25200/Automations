@@ -40,11 +40,16 @@ public class OutputWidget implements Renderable, NarratableEntry, GuiEventListen
 	public OutputWidget(Output output, NodeWidget parent){
 		this.output = output;
 		this.parent = parent;
-		for (Connection c : output.connections){
-			this.connections.put(c, new ConnectionWidget(c));
-		}
 
 	}
+
+    public void createConnectionWidgets(){
+		for (Connection c : output.connections){
+            ConnectionWidget connectionWidget = new ConnectionWidget(c, this, AutomationScreen.instance.nodeList.inputs.get(c.input));
+			this.connections.put(c, connectionWidget);
+            AutomationScreen.instance.nodeList.connections.put(c, connectionWidget);
+		}
+    }
 
 	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 		int color = isMouseOver(mouseX,mouseY) ? darkenColor(this.output.color, 50) : this.output.color;
@@ -59,7 +64,8 @@ public class OutputWidget implements Renderable, NarratableEntry, GuiEventListen
 		}
 
 		if(this.dragging){
-			ConnectionWidget.drawLine(graphics, 3, this.x+4, this.y+4, mouseX, mouseY, this.output.color);
+			// ConnectionWidget.drawLine(graphics, 3, this.x+4, this.y+4, mouseX, mouseY, this.output.color);
+            ConnectionWidget.drawBezier(graphics, this.output.color, this.x, mouseX, this.y, mouseY);
 		}
 	}
 
@@ -86,7 +92,7 @@ public class OutputWidget implements Renderable, NarratableEntry, GuiEventListen
 		double mouseY = event.y();
 		if(!this.dragging) return true;
 		this.dragging = false;
-		for (NodeWidget nodeWidget : AutomationsClient.nodeList.nodes.values()) {
+		for (NodeWidget nodeWidget : AutomationScreen.instance.nodeList.nodes.values()) {
 			for (InputWidget inputWidget : nodeWidget.inputs.values()) {
 				if (this.output.getType() == null) continue;
 				if (inputWidget.isMouseOver(mouseX, mouseY) && inputWidget.input.getType().isAssignableFrom(this.output.getType())) {

@@ -1,11 +1,13 @@
 package fr.artus25200.automations.common.node.action;
 
 import fr.artus25200.automations.common.node.*;
+import fr.artus25200.automations.common.node.events.EventNode;
+import fr.artus25200.automations.common.node.events.HasParent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ActionNode extends Node {
+public abstract class ActionNode extends Node implements HasParent{
     public Input actionInput;
     public Output actionOutput;
 
@@ -39,6 +41,12 @@ public abstract class ActionNode extends Node {
         return 0xFFfA6161;
     }
 
+    public ArrayList<Node> GetParents(){
+        if(!actionInput.isConnected()) return new ArrayList<>();
+        ArrayList<Node> list = ((HasParent)actionInput.connector.output.parent).GetParents();
+        list.add(this);
+        return list;
+    }
 
     public abstract boolean onExecute();
 }

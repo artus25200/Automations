@@ -36,16 +36,16 @@ public class ConnectionWidget implements Renderable, GuiEventListener, Narratabl
 	// Points to render lines in between
 	public transient ArrayList<Vec2> curvePoints = new ArrayList<>();
 
-	public ConnectionWidget(Connection connection){
+	public ConnectionWidget(Connection connection, OutputWidget outputWidget, InputWidget inputWidget){
 		this.connection   = connection;
-		this.outputWidget = AutomationsClient.nodeList.outputs.get(connection.output);
-		this.inputWidget  = AutomationsClient.nodeList.inputs.get(connection.input);
+		this.outputWidget = outputWidget;
+		this.inputWidget  = inputWidget;
 	}
 
 	@Override
 	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
 		if(prevX1 != outputWidget.x || prevY1 != outputWidget.y || prevX2 != inputWidget.x || prevY2 != inputWidget.y)
-			calculateBezier();
+			curvePoints = calculateBezier(outputWidget.x, inputWidget.x, outputWidget.y, inputWidget.y);
 		prevX1 = outputWidget.x;
 		prevY1 = outputWidget.y;
 		prevX2 = inputWidget.x;
@@ -78,24 +78,34 @@ public class ConnectionWidget implements Renderable, GuiEventListener, Narratabl
 	}
 
 	public void delete(){
-		this.connection.delete();
 		this.inputWidget.connectionWidget = null;
 		this.outputWidget.connections.remove(this.connection);
+		this.connection.delete();
 	}
 
-	public void calculateBezier(){
-        if(curvePoints == null) curvePoints = new ArrayList<>();
+	public static ArrayList<Vec2> calculateBezier(int x1, int x2, int y1, int y2){
+        ArrayList<Vec2> curvePoints = new ArrayList<>();
 		curvePoints.removeAll(curvePoints.stream().toList());
 		double t=0;
-		Vec2 start = new Vec2(outputWidget.x, outputWidget.y);
-		Vec2 end = new Vec2(inputWidget.x, inputWidget.y);
+		Vec2 start = new Vec2(x1, y1);
+		Vec2 end = new Vec2(x2, y2);
 		while (t<=1){
 			curvePoints.add(AutomationScreen.bezierNodeConnection(t, start, end));
 			t=t+(1/BEZIER_PRECISION);
 		}
 
 		curvePoints.add(AutomationScreen.bezierNodeConnection(1, start, end));
+        return curvePoints;
 	}
+
+    public static void drawBezier(GuiGraphicsExtractor graphics, int color, int x1, int x2, int y1, int y2){
+        ArrayList<Vec2> curvePoints = calculateBezier(x1, x2, y1, y2);
+        for (int i = 0; i < curvePoints.size()-1; i++) {
+			drawLine(graphics, 2, (int) curvePoints.get(i).x+4, (int) curvePoints.get(i).y+4, (int) curvePoints.get(i+1).x+4, (int) curvePoints.get(i+1).y+4, color);
+		}
+    }
+
+
 
 	@Override
 	public boolean isMouseOver(double mouseX, double mouseY) {

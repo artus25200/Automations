@@ -52,6 +52,11 @@ public class AutomationsServer {
 			}
 			ObjectInputStream is = new ObjectInputStream(new FileInputStream(nodeFile.toFile()));
 			nodeList = (NodeList) is.readObject();
+            for(Node node : nodeList.savedNodes){
+                if(node instanceof EventNode){
+                    ((EventNode)node).registerEvent();
+                }
+            }
 			is.close();
 		}
 		catch(IOException | ClassNotFoundException e){

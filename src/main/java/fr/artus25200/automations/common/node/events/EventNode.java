@@ -9,7 +9,7 @@ import fr.artus25200.automations.common.node.Output;
 import fr.artus25200.automations.common.node.action.Action;
 
 
-public abstract class EventNode extends Node {
+public abstract class EventNode extends Node implements HasParent {
     public Output actionOutput;
     
     @Override
@@ -45,4 +45,10 @@ public abstract class EventNode extends Node {
     }
 
     public abstract void registerEvent();
+
+    public ArrayList<Node> GetParents(){
+        ArrayList<Node> list = new ArrayList<>();
+        list.add(this);
+        return list;
+    }
 }

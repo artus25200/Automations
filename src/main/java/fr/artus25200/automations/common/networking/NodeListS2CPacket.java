@@ -17,6 +17,7 @@ import java.io.ObjectInputStream;
 
 public class NodeListS2CPacket {
 	public static boolean received;
+    public static NodeList result;
 
 	public record Payload(byte[] data) implements CustomPacketPayload {
 		public static final Type<Payload> TYPE = new Type<>(ModNetworking.NODE_LIST_S2C_PACKET_ID);
@@ -33,8 +34,9 @@ public class NodeListS2CPacket {
 			byte[] array = payload.data();
 			ByteArrayInputStream array2 = new ByteArrayInputStream(array);
 			ObjectInputStream is = new ObjectInputStream(array2);
-			AutomationsClient.nodeList = (NodeList) is.readObject();
-            AutomationsClient.nodeList.initialize();
+
+			result = (NodeList) is.readObject();
+            result.initialize();
 
 			is.close();
 			received = true;

@@ -4,9 +4,13 @@
 
 package fr.artus25200.automations.common.node;
 
-import fr.artus25200.automations.common.node.action.Action;
+import java.util.ArrayList;
 
-public class RedirectNode extends Node{
+import fr.artus25200.automations.common.node.action.Action;
+import fr.artus25200.automations.common.node.events.EventNode;
+import fr.artus25200.automations.common.node.events.HasParent;
+
+public class RedirectNode extends Node implements HasParent{
 	@Override
 	public void setInputs() {
 		this.inputs.add(new Input(this, "", Object.class));
@@ -35,5 +39,14 @@ public class RedirectNode extends Node{
 	public int getColor() {
 		return 0xFFFFFFFF;
 	}
+
+
+    public ArrayList<Node> GetParents(){
+        if(!this.inputs.get(0).isConnected()) return new ArrayList<>();
+        return ((HasParent)this.inputs.get(0).connector.output.parent).GetParents();
+        // Ignore redirect nodes
+        // list.add(this);
+        // return list;
+    }
 
 }

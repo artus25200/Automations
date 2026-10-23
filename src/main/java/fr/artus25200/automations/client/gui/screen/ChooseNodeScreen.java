@@ -127,5 +127,10 @@ public class ChooseNodeScreen extends Screen {
 		return super.mouseClicked(event, doubleClick);
 	}
 
+    @Override
+    public boolean shouldCloseOnEsc() {
+        return false;
+    }
+
 
 }

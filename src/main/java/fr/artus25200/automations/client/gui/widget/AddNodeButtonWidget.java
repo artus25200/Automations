@@ -5,7 +5,6 @@
 package fr.artus25200.automations.client.gui.widget;
 
 import fr.artus25200.automations.client.gui.screen.AutomationScreen;
-import fr.artus25200.automations.common.Automations;
 import fr.artus25200.automations.common.node.Node;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;

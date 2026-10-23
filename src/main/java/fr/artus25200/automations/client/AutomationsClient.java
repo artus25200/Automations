@@ -39,11 +39,9 @@ public class AutomationsClient implements ClientModInitializer {
 	public static Font tr;
 	public static boolean shouldOpenNodeScreen = false;
 
-	public static NodeList nodeList = new NodeList();
 
 	@Override
 	public void onInitializeClient() {
-		nodeList = new NodeList();
 
 		ModNetworking.RegisterS2CPackets();
 		test();
@@ -66,32 +64,9 @@ public class AutomationsClient implements ClientModInitializer {
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if(keyBinding.consumeClick()){
-				openAutomationScreen();
-			}
-			if(shouldOpenNodeScreen){
-				shouldOpenNodeScreen = false;
 				client.gui.setScreen(new AutomationScreen());
 			}
 		});
-	}
-
-	public static void openAutomationScreen(){
-		ClientPlayNetworking.send(new AskForNodeListC2SPacket.Payload());
-		new Thread(()->{
-			while(!NodeListS2CPacket.received){
-				try {
-					Thread.sleep(100L);
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
-				}
-			}
-			NodeListS2CPacket.received = false;
-
-            for(Node n : AutomationsClient.nodeList.savedNodes){
-                 new NodeWidget(n);
-            }
-			shouldOpenNodeScreen = true;
-		}).start();
 	}
 
 	public static int getColor(Class<?> type){

@@ -4,7 +4,13 @@
 
 package fr.artus25200.automations.client.gui.widget;
 
-import com.google.gson.Gson;
+import static fr.artus25200.automations.client.AutomationsClient.getTr;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+
 import fr.artus25200.automations.client.AutomationsClient;
 import fr.artus25200.automations.client.gui.screen.AutomationScreen;
 import fr.artus25200.automations.common.Automations;
@@ -15,20 +21,12 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Renderable;
-import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.client.gui.narration.NarratableEntry;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.input.MouseButtonEvent;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-
-import static fr.artus25200.automations.client.AutomationsClient.getTr;
-
 @Environment(EnvType.CLIENT)
-public class NodeWidget implements Renderable, GuiEventListener, NarratableEntry, Serializable, RightClickable {
+public class NodeWidget implements Renderable, NarratableEntry, Serializable, RightClickable {
 
 	public Node node;
 
@@ -47,15 +45,15 @@ public class NodeWidget implements Renderable, GuiEventListener, NarratableEntry
 		this.y = node.y;
 
 		for (Input i : node.inputs) {
-			inputs.put(i, new InputWidget(i, this));
+            InputWidget inputWidget = new InputWidget(i, this);
+            AutomationScreen.instance.nodeList.inputs.put(i, inputWidget);
+            this.inputs.put(i, inputWidget);
 		}
 		for (Output o : node.outputs) {
-			outputs.put(o, new OutputWidget(o, this));
+            OutputWidget outputWidget = new OutputWidget(o, this);
+            AutomationScreen.instance.nodeList.outputs.put(o, outputWidget);
+            this.outputs.put(o, outputWidget);
 		}
-
-		AutomationsClient.nodeList.nodes.put(node, this);
-		AutomationsClient.nodeList.outputs.putAll(outputs);
-		AutomationsClient.nodeList.inputs.putAll(inputs);
 	}
 
 	public void delete(){
@@ -67,8 +65,8 @@ public class NodeWidget implements Renderable, GuiEventListener, NarratableEntry
 		for(InputWidget iw : inputs.values()){
 			if(iw.connectionWidget != null) iw.connectionWidget.delete();
 		}
-        AutomationsClient.nodeList.nodes.remove(this.node);
-        AutomationsClient.nodeList.savedNodes.remove(this.node);
+        // TODO
+        AutomationScreen.instance.deleteNodeWidget(this);
 	}
 
 	@Override
@@ -211,7 +209,6 @@ public class NodeWidget implements Renderable, GuiEventListener, NarratableEntry
 		List<ContextMenuWidget.MenuEntry> entries = new ArrayList<>();
 		entries.add(new ContextMenuWidget.MenuEntry("Delete", (nodeWidget) -> {
 			((NodeWidget) nodeWidget).delete();
-			AutomationScreen.instance.refresh();
 		}));
 		entries.add(new ContextMenuWidget.MenuEntry("Duplicate", (nodeWidget) -> {
 			Node original = ((NodeWidget)nodeWidget).node;
