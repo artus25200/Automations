@@ -44,7 +44,6 @@ public abstract class EventNode extends Node implements HasParent {
         return true;
     }
 
-    public abstract void registerEvent();
 
     public ArrayList<Node> GetParents(){
         ArrayList<Node> list = new ArrayList<>();

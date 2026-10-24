@@ -34,6 +34,9 @@ import net.minecraft.resources.Identifier;
 @Environment(EnvType.CLIENT)
 public class AutomationsClient implements ClientModInitializer {
 
+    public static final int OUTLINE_COLOR = 0xFF4D4D4D;
+    public static final int OUTLINE_COLOR_HOVER = 0xFFFFFFFF;
+
 	private static ToggleKeyMapping keyBinding;
 
 	public static Font tr;

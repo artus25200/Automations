@@ -4,6 +4,7 @@
 
 package fr.artus25200.automations.common.node;
 
+import fr.artus25200.automations.common.node.action.ExecuteCommandActionNode;
 import fr.artus25200.automations.common.node.action.KillEntityActionNode;
 import fr.artus25200.automations.common.node.action.SendMessageToPlayersActionNode;
 import fr.artus25200.automations.common.node.condition.IfConditionNode;
@@ -35,6 +36,7 @@ public class Nodes {
 	//ACTION
 	public static final Node KILL_ENTITY_ACTION_NODE;
 	public static final Node SEND_MESSAGE_TO_PLAYERS_ACTION_NODE;
+    public static final Node EXECUTE_COMMAND_ACTION_NODE;
 
 	//DATA
 	public static final Node ALL_PLAYERS_DATA_NODE;
@@ -71,6 +73,7 @@ public class Nodes {
 		//ACTION
 		KILL_ENTITY_ACTION_NODE = register("kill_entity_action_node", new KillEntityActionNode());
 		SEND_MESSAGE_TO_PLAYERS_ACTION_NODE = register("send_message_to_player_action_node", new SendMessageToPlayersActionNode());
+        EXECUTE_COMMAND_ACTION_NODE = register("execute_command_action_node", new ExecuteCommandActionNode());
 
 		//DATA
 		ALL_PLAYERS_DATA_NODE = register("all_players_data_node", new AllPlayersDataNode());

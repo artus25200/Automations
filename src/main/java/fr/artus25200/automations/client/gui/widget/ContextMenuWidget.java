@@ -15,6 +15,10 @@ import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import fr.artus25200.automations.client.AutomationsClient;
+import fr.artus25200.automations.common.node.action.Action;
+
+import static fr.artus25200.automations.client.AutomationsClient.getColor;
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
 public class ContextMenuWidget implements Renderable, NarratableEntry, GuiEventListener {
@@ -52,7 +56,8 @@ public class ContextMenuWidget implements Renderable, NarratableEntry, GuiEventL
 
 	@Override
 	public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
-		graphics.fill(x, y-3, x + width, y + height + 3, 0xFF252525);
+		graphics.fill(x, y-3, x + width, y + height + 3, 0xFF000000);
+        graphics.outline(x, y-3, width, height+6, isMouseOver(mouseX, mouseY) ? AutomationsClient.OUTLINE_COLOR_HOVER : AutomationsClient.OUTLINE_COLOR);
 		for(MenuEntry entry : entries){
 			entry.extractRenderState(graphics, mouseX, mouseY, delta);
 		}
@@ -109,7 +114,9 @@ public class ContextMenuWidget implements Renderable, NarratableEntry, GuiEventL
 
 		@Override
 		public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
-			graphics.fill(x, y, x + width, y+ height, (isMouseOver(mouseX, mouseY) ? 0xFF626262 : 0xFF252525));
+//			graphics.fill(x, y, x + width, y+ height, (isMouseOver(mouseX, mouseY) ? 0xFF626262 : 0xFF252525));
+            graphics.fill(x, y, x+width, y+height, isMouseOver(mouseX, mouseY) ? getColor(Action.class) : 0xFF000000);
+
 			graphics.centeredText(getTr(), text, x + width/2, y + height/4, 0XFFFFFFFF);
 		}
 

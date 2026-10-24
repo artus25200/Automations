@@ -28,7 +28,7 @@ public class Connection implements Serializable {
 	}
 
 	public void delete(){
-		this.input.connector = null;
+		if(this.input.connector == this) this.input.connector = null;
 		this.output.connections.remove(this);
 		//Automations.nodeWrapper.connections.remove(this);
 	}

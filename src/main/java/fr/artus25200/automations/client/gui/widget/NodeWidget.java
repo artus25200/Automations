@@ -4,6 +4,7 @@
 
 package fr.artus25200.automations.client.gui.widget;
 
+import static fr.artus25200.automations.client.AutomationsClient.OUTLINE_COLOR;
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
 import java.io.Serializable;
@@ -57,16 +58,21 @@ public class NodeWidget implements Renderable, NarratableEntry, Serializable, Ri
 	}
 
 	public void delete(){
+		AutomationScreen screen = AutomationScreen.instance;
+
+		// Connections going out of this node
 		for(OutputWidget ow : outputs.values()){
-			for (ConnectionWidget cw : ow.connections.values()){
+			for (ConnectionWidget cw : new ArrayList<>(ow.connections.values())){
 				cw.delete();
 			}
 		}
-		for(InputWidget iw : inputs.values()){
-			if(iw.connectionWidget != null) iw.connectionWidget.delete();
+
+		// Connections coming into this node
+		for (InputWidget iw : inputs.values()) {
+			if (iw.connectionWidget != null) iw.connectionWidget.delete();
 		}
-        // TODO
-        AutomationScreen.instance.deleteNodeWidget(this);
+
+		screen.deleteNodeWidget(this);
 	}
 
 	@Override
@@ -76,6 +82,7 @@ public class NodeWidget implements Renderable, NarratableEntry, Serializable, Ri
 
 		graphics.fill(x, y, x + width, y + height, 0xFF000000);
 		graphics.fill(x, y, x + width, y + 5 + fontheight + 2, this.node.getColor());
+        graphics.outline(x, y, width, height, isMouseOver(mouseX, mouseY) ? AutomationsClient.OUTLINE_COLOR_HOVER : AutomationsClient.OUTLINE_COLOR);
 
 		for(InputWidget inputWidget : inputs.values()) {
 			inputWidget.input.x = inputWidget.x;
@@ -212,7 +219,9 @@ public class NodeWidget implements Renderable, NarratableEntry, Serializable, Ri
 		}));
 		entries.add(new ContextMenuWidget.MenuEntry("Duplicate", (nodeWidget) -> {
 			Node original = ((NodeWidget)nodeWidget).node;
-			Node duplicatedNode = (Node) Automations.duplicateObject(original);
+            Node duplicatedNode = original.getClass().getDeclaredConstructor().newInstance();
+            duplicatedNode.x = ((NodeWidget)nodeWidget).x + 20;
+            duplicatedNode.y = ((NodeWidget)nodeWidget).y + 20;
 			AutomationScreen.instance.addNode(duplicatedNode);
 		}));
 		return new ContextMenuWidget((int) mouseX, (int) mouseY, this, entries);

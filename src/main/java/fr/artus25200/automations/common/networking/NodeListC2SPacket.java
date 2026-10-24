@@ -5,6 +5,7 @@
 package fr.artus25200.automations.common.networking;
 
 import fr.artus25200.automations.common.NodeList;
+import fr.artus25200.automations.common.node.Node;
 import fr.artus25200.automations.server.AutomationsServer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -16,6 +17,7 @@ import net.minecraft.server.permissions.Permissions;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
 public class NodeListC2SPacket {
 
@@ -35,7 +37,7 @@ public class NodeListC2SPacket {
 			byte[] array = payload.data();
 			ByteArrayInputStream inputStream = new ByteArrayInputStream(array);
 			ObjectInputStream is = new ObjectInputStream(inputStream);
-			AutomationsServer.nodeList = (NodeList) is.readObject();
+			AutomationsServer.nodes = (ArrayList<Node>) is.readObject();
 			is.close();
 		} catch (IOException | ClassNotFoundException e){
 			throw new RuntimeException(e);

@@ -25,5 +25,6 @@ public class CButtonWidget extends Button {
 		int color_ = isMouseOver(mouseX, mouseY) ? AutomationsClient.darkenColor(this.color, 20) : this.color;
 		graphics.fill(getX(), getY(), getX() + getWidth(), getY() + getHeight(), color_);
 		graphics.centeredText(getTr(), getMessage(), this.getX() + this.getWidth()/2, this.getY()+(this.getHeight()-getTr().lineHeight)/2 +1, 0xFFFFFFFF);
+        graphics.outline(getX(), getY(), getWidth(), getHeight(), isMouseOver(mouseX, mouseY) ? AutomationsClient.OUTLINE_COLOR_HOVER : AutomationsClient.OUTLINE_COLOR);
 	}
 }

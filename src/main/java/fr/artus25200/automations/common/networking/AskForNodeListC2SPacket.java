@@ -42,7 +42,7 @@ public class AskForNodeListC2SPacket {
 		try {
 			ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
 			ObjectOutputStream os = new ObjectOutputStream(byteArray);
-			os.writeObject(AutomationsServer.nodeList);
+			os.writeObject(AutomationsServer.nodes);
 			os.close();
 			ServerPlayNetworking.send(player, new NodeListS2CPacket.Payload(byteArray.toByteArray()));
 		} catch (IOException e) {

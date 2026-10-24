@@ -17,7 +17,6 @@ public class ServerStartEventNode extends EventNode{
 		super();
         this.categories.add(Nodes.NodeCategory.EVENT);
         this.categories.add(Nodes.NodeCategory.SERVER);
-        this.registerEvent();
 	}
 
 	@Override
@@ -35,10 +34,4 @@ public class ServerStartEventNode extends EventNode{
 		return "On Server Start";
 	}
 
-	@Override
-	public void registerEvent() {
-		ServerLifecycleEvents.SERVER_STARTED.register((server)->{
-			this.Execute(server);
-		});
-	}
 }

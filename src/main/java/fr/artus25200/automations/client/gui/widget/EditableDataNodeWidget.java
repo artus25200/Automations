@@ -16,6 +16,8 @@ import net.minecraft.network.chat.Component;
 
 import static fr.artus25200.automations.client.AutomationsClient.getTr;
 
+import fr.artus25200.automations.client.AutomationsClient;
+
 public class EditableDataNodeWidget extends NodeWidget {
 
 	public transient CButtonWidget editButton;
@@ -31,6 +33,7 @@ public class EditableDataNodeWidget extends NodeWidget {
 
 		int fontheight = getTr().lineHeight;
 		graphics.fill(x, y, x + width, y + 5 + fontheight + 2, this.node.getColor());
+        graphics.outline(x, y, width, 5 + fontheight + 2, isMouseOver(mouseX, mouseY) ? AutomationsClient.OUTLINE_COLOR_HOVER : AutomationsClient.OUTLINE_COLOR);
 
 		OutputWidget outputWidget = outputs.values().stream().toList().get(0);
 		outputWidget.output.x = outputWidget.x;

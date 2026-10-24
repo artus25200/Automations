@@ -12,10 +12,13 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 
 import java.util.*;
+
+import com.mojang.blaze3d.platform.InputConstants;
 
 //TODO: Tabs or search
 public class ChooseNodeScreen extends Screen {
@@ -69,7 +72,6 @@ public class ChooseNodeScreen extends Screen {
 				if (e.getKey().selected()) selectedCategories.add(e.getValue());
 			}
 			this.selectedCategories = selectedCategories;
-
 			HashMap<String, Node> n2 = new HashMap<>();
 
 			for(Node n : Nodes.NODE_REGISTERY.stream().toList()){
@@ -131,6 +133,20 @@ public class ChooseNodeScreen extends Screen {
     public boolean shouldCloseOnEsc() {
         return false;
     }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
+    }
+
+@Override
+    public boolean keyPressed(KeyEvent event) {
+        if (event.key() == InputConstants.KEY_ESCAPE) {
+            this.minecraft.gui.setScreen(this.parent);
+        }
+        return super.keyPressed(event);
+    }
+
 
 
 }

@@ -1,11 +1,8 @@
 package fr.artus25200.automations.common.node.events;
 
-import fr.artus25200.automations.common.Automations;
 import fr.artus25200.automations.common.customTypes.EntityList;
 import fr.artus25200.automations.common.node.Nodes;
 import fr.artus25200.automations.common.node.Output;
-import fr.artus25200.automations.server.AutomationsServer;
-import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -18,7 +15,6 @@ public class BlockBreakEventNode extends EventNode{
         this.categories.add(Nodes.NodeCategory.EVENT);
         this.categories.add(Nodes.NodeCategory.BLOCK);
         this.categories.add(Nodes.NodeCategory.PLAYER);
-        this.registerEvent();
     }
 
     @Override
@@ -43,10 +39,4 @@ public class BlockBreakEventNode extends EventNode{
         return "On Block Break";
     }
 
-    @Override
-    public void registerEvent() {
-        PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, ci) -> {
-                this.Execute(world, pos, state, player);
-        });
-    }
 }

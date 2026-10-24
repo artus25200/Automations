@@ -1,6 +1,6 @@
-[22:37:41] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 26.3 with Fabric Loader 0.19.5
-[22:37:41] [main/INFO] (FabricLoader/Mappings) Mappings not present!
-[22:37:41] [main/INFO] (FabricLoader) Loading 52 mods:
+[20:46:05] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 26.3 with Fabric Loader 0.19.5
+[20:46:05] [main/INFO] (FabricLoader/Mappings) Mappings not present!
+[20:46:05] [main/INFO] (FabricLoader) Loading 52 mods:
 	- automations 1.0.0
 	- fabric-advancement-api-v1 1.0.1+38c7a2d55d
 	- fabric-api 0.163.0+26.3
@@ -53,25 +53,25 @@
 	- java 25
 	- minecraft 26.3
 	- mixinextras 0.5.5
-[22:37:41] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/Users/artus25200/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[22:37:42] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
-[22:37:42] [Datafixer Bootstrap #0/INFO] (Minecraft) 307 Datafixer optimizations took 130 milliseconds
-[22:37:43] [main/WARN] (MacOperatingSystem) Unable to parse version 27.0 to a codename.
-[22:37:45] [Render thread/INFO] (Minecraft) Environment: Environment[discoveryUrl=https://discovery.minecraftservices.com/minecraft/client, name=PROD]
-[22:37:45] [Render thread/INFO] (Minecraft) Setting user: Player145
-[22:37:45] [Render thread/INFO] (automations) Initializing Automations 0.1.0 alpha
-[22:37:45] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[22:37:45] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.3-snapshot
-[22:37:45] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: App name: Minecraft
-[22:37:45] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: App version: 26.3
-[22:37:45] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: App ID: com.mojang.minecraft
-[22:37:45] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: SDL revision: SDL-3.4.14-62f10da
-[22:37:45] [Render thread/WARN] (Minecraft) Device [Apple M5] supports all extensions from FeatureSet [Vulkan Portability Subset], making required
-[22:37:45] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 4.1 Metal - 91.7
-[22:37:45] [Render thread/INFO] (Minecraft) Using graphics device: Apple M5 (Apple)
-[22:37:45] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_draw_indirect, GL_EXT_texture_filter_anisotropic
-[22:37:45] [Render thread/INFO] (Minecraft) Created window using SDL video driver: cocoa
-[22:37:47] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
+[20:46:05] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/Users/artus25200/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[20:46:06] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[20:46:06] [Datafixer Bootstrap #0/INFO] (Minecraft) 307 Datafixer optimizations took 120 milliseconds
+[20:46:07] [main/WARN] (MacOperatingSystem) Unable to parse version 27.0 to a codename.
+[20:46:08] [Render thread/INFO] (Minecraft) Environment: Environment[discoveryUrl=https://discovery.minecraftservices.com/minecraft/client, name=PROD]
+[20:46:08] [Render thread/INFO] (Minecraft) Setting user: Artus25200
+[20:46:08] [Render thread/INFO] (automations) Initializing Automations 0.1.0 alpha
+[20:46:08] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[20:46:08] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.4.3-snapshot
+[20:46:08] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: App name: Minecraft
+[20:46:08] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: App version: 26.3
+[20:46:08] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: App ID: com.mojang.minecraft
+[20:46:08] [Render thread/INFO] (Minecraft) SDL [SYSTEM]: SDL revision: SDL-3.4.14-62f10da
+[20:46:08] [Render thread/WARN] (Minecraft) Device [Apple M5] supports all extensions from FeatureSet [Vulkan Portability Subset], making required
+[20:46:09] [Render thread/INFO] (Minecraft) Using graphics backend OpenGL, using drivers: 4.1 Metal - 91.7
+[20:46:09] [Render thread/INFO] (Minecraft) Using graphics device: Apple M5 (Apple)
+[20:46:09] [Render thread/INFO] (Minecraft) Using graphics device extensions: GL_ARB_draw_indirect, GL_EXT_texture_filter_anisotropic
+[20:46:09] [Render thread/INFO] (Minecraft) Created window using SDL video driver: cocoa
+[20:46:11] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at knot//com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:70)
 	at knot//com.mojang.authlib.services.MinecraftServicesUserApiService.fetchProperties(MinecraftServicesUserApiService.java:168)
@@ -87,145 +87,143 @@ Caused by: MinecraftClientHttpException[type=HTTP_ERROR, status=401, response=Er
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:65)
 	at knot//com.mojang.authlib.services.MinecraftServicesUserApiService.fetchProperties(MinecraftServicesUserApiService.java:118)
 	... 5 more
-[22:37:48] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, vanilla, automations, fabric-advancement-api-v1, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
-[22:37:48] [Worker-Main-6/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
-[22:37:48] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
-[22:37:48] [Worker-Main-9/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:11] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, vanilla, automations, fabric-advancement-api-v1, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-getter-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-creative-tab-api-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-debug-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-key-mapping-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v3, fabric-menu-api-v1, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-permission-api-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader
+[20:46:11] [Worker-Main-2/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
+[20:46:11] [Worker-Main-7/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
+[20:46:11] [Worker-Main-6/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
+[20:46:11] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_04' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_crumbling, FRAGMENT minecraft:core/rendertype_crumbling. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:11] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_crumbling, FRAGMENT minecraft:core/rendertype_crumbling. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:11] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_lines, FRAGMENT minecraft:core/rendertype_lines. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:11] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_lines, FRAGMENT minecraft:core/rendertype_lines. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_04' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/block, FRAGMENT minecraft:core/block. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/block, FRAGMENT minecraft:core/block. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_entity_shadow, FRAGMENT minecraft:core/rendertype_entity_shadow. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/screenquad, FRAGMENT minecraft:core/oit_composite. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/screenquad, FRAGMENT minecraft:core/integrate_depth. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_04' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/animate_sprite, FRAGMENT minecraft:core/animate_sprite_blit. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_entity_shadow, FRAGMENT minecraft:core/rendertype_entity_shadow. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/screenquad, FRAGMENT minecraft:core/oit_composite. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/screenquad, FRAGMENT minecraft:core/integrate_depth. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/clouds, FRAGMENT minecraft:core/clouds. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/screenquad, FRAGMENT minecraft:core/oit_depth_bounds_cull. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/block, FRAGMENT minecraft:core/block. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
-WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_04' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/animate_sprite, FRAGMENT minecraft:core/animate_sprite_blit. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_lines, FRAGMENT minecraft:core/rendertype_lines. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/clouds, FRAGMENT minecraft:core/clouds. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_entity_shadow, FRAGMENT minecraft:core/rendertype_entity_shadow. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/clouds, FRAGMENT minecraft:core/clouds. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
-
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/screenquad, FRAGMENT minecraft:core/oit_depth_bounds_cull. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/block, FRAGMENT minecraft:core/block. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_crumbling, FRAGMENT minecraft:core/rendertype_crumbling. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/terrain, FRAGMENT minecraft:core/terrain. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_04' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/clouds, FRAGMENT minecraft:core/clouds. Log output: WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_lines, FRAGMENT minecraft:core/rendertype_lines. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_entity_shadow, FRAGMENT minecraft:core/rendertype_entity_shadow. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
 WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
 
-[22:37:48] [Render thread/INFO] (Minecraft) OpenAL initialized on device MacBook Air Speakers
-[22:37:48] [Render thread/INFO] (Minecraft) Sound engine started
-[22:37:48] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[22:37:48] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
-[22:37:48] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
-[22:37:48] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[22:37:48] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
-[22:37:48] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
-[22:37:48] [Render thread/INFO] (Minecraft) Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
-[22:37:49] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[22:37:49] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/rendertype_crumbling, FRAGMENT minecraft:core/rendertype_crumbling. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/entity, FRAGMENT minecraft:core/entity. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/text, FRAGMENT minecraft:core/text. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) Info log when linking program containing VERTEX minecraft:core/particle, FRAGMENT minecraft:core/particle. Log output: WARNING: Output of vertex shader '_interface_variable_01' not read by fragment shader
+WARNING: Output of vertex shader '_interface_variable_00' not read by fragment shader
+
+[20:46:12] [Render thread/INFO] (Minecraft) OpenAL initialized on device MacBook Air Speakers
+[20:46:12] [Render thread/INFO] (Minecraft) Sound engine started
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[20:46:12] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[20:46:12] [Download-2/ERROR] (Minecraft) Failed to fetch Realms feature flags
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:625)
 	at knot//com.mojang.realmsclient.client.RealmsClient.fetchFeatureFlags(RealmsClient.java:204)
@@ -233,13 +231,50 @@ com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication 
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[22:37:49] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
-[22:37:49] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
-[22:37:49] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[22:37:49] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
-[22:37:49] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
-[22:37:49] [Download-2/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[22:37:49] [Download-2/ERROR] (Minecraft) Couldn't connect to realms
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+[20:46:12] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[20:46:16] [Download-1/WARN] (Minecraft) Couldn't look up profile properties for 20845127-2c40-30cc-b47c-4539667690cf
+com.mojang.authlib.exceptions.MinecraftClientException: Failed to read from https://sessionserver.mojang.com/session/minecraft/profile/208451272c4030ccb47c4539667690cf?unsigned=false due to Read timed out
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readServiceResponse(MinecraftClient.java:151)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.getWithEtag(MinecraftClient.java:81)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:65)
+	at knot//com.mojang.authlib.services.MinecraftServicesSessionService.fetchProfileUncached(MinecraftServicesSessionService.java:189)
+	at knot//com.mojang.authlib.services.MinecraftServicesSessionService.fetchProfile(MinecraftServicesSessionService.java:161)
+	at knot//net.minecraft.client.Minecraft.lambda$new$0(Minecraft.java:447)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:277)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:302)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:354)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:798)
+	at java.base/java.net.Socket$SocketInputStream.implRead(Socket.java:974)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:964)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1068)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:289)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:330)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:388)
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:803)
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:735)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1402)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1305)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:493)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readServiceResponse(MinecraftClient.java:130)
+	... 9 more
+[20:46:16] [Download-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[20:46:16] [Download-1/ERROR] (Minecraft) Couldn't connect to realms
 com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot//com.mojang.realmsclient.client.RealmsClient.execute(RealmsClient.java:625)
 	at knot//com.mojang.realmsclient.client.RealmsClient.clientCompatible(RealmsClient.java:354)
@@ -248,34 +283,156 @@ com.mojang.realmsclient.exception.RealmsServiceException: Realms authentication 
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[22:37:53] [Worker-Main-8/INFO] (Minecraft) Loaded 1866 advancements
-[22:37:53] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 67 new biomes in 391.7 μs
-[22:37:53] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 26.3
-[22:37:53] [Server thread/INFO] (Minecraft) Generating keypair
-[22:37:53] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
-[22:37:53] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[22:37:53] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[22:37:53] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[22:37:53] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
-[22:37:53] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
-[22:37:54] [Server thread/INFO] (Minecraft) Preparing spawn area: 100%
-[22:37:54] [Server thread/INFO] (Minecraft) Time elapsed: 538 ms
-[22:37:54] [Server thread/INFO] (Minecraft) Player145[local:E:c3da87f9] logged in with entity id 50 at (-20.5, 63.0, -13.5)
-[22:37:54] [Server thread/INFO] (Minecraft) System chat: Player145 joined the game
-[22:37:54] [Render thread/WARN] (Minecraft) Requested post effect does not exist: minecraft:end_of_frame
-[22:37:54] [Server thread/INFO] (Minecraft) Changing view distance to 16, from 10
-[22:37:54] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[22:37:54] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
-[22:37:54] [Render thread/INFO] (Minecraft) Loaded 2 advancements
-[22:37:54] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
-[22:37:54] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 8.
-[22:37:54] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 32.
-[22:37:54] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
-[22:37:54] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
-[22:37:55] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
-[22:37:55] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
-[22:37:55] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
-[22:38:13] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[22:38:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[22:38:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[22:38:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[20:46:21] [Render thread/INFO] (Minecraft) Connecting to localhost, 25565
+[20:46:22] [Render thread/INFO] (Minecraft) Loaded 74 advancements
+[20:46:22] [Render thread/WARN] (Minecraft) Requested post effect does not exist: minecraft:end_of_frame
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 8.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[20:46:22] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[20:46:23] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
+[20:48:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:02] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:12] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:16] [Render thread/INFO] (Minecraft) Loaded 75 advancements
+[20:48:20] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:20] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:22] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:24] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:24] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:26] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:34] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:34] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:39] [Render thread/INFO] (Minecraft) Loaded 75 advancements
+[20:48:41] [Render thread/INFO] (Minecraft) Loaded 85 advancements
+[20:48:44] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:44] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:50] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:48:53] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:48:56] [Render thread/INFO] (Minecraft) Loaded 85 advancements
+[20:49:08] [Render thread/INFO] (Minecraft) Loaded 85 advancements
+[20:49:34] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:34] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:35] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:35] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:35] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:35] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:36] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:36] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:36] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:36] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:36] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:36] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:45] [Render thread/INFO] (Minecraft) [System] [CHAT] Set minecraft:overworld to time marker minecraft:night
+[20:49:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:47] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:48] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:49:48] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:49:59] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
+[20:50:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:50:14] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:50:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:50:42] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:51:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:51:14] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:51:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:51:15] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:51:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:51:16] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:51:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:51:25] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:51:27] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:51:27] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Set minecraft:overworld to time marker minecraft:day]
+[20:53:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:54:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:54:07] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:54:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:54:11] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:54:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:54:14] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:54:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:54:16] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:54:20] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:54:20] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:54:40] [Render thread/INFO] (Minecraft) [System] [CHAT] Teleported Artus25200 to -1.787858, 165.000000, 30.266937
+[20:54:44] [Render thread/INFO] (Minecraft) [System] [CHAT] Teleported Artus25200 to -2.838878, 165.000000, 30.481765
+[20:54:48] [Render thread/INFO] (Minecraft) [System] [CHAT] Teleported Artus25200 to -2.108698, 167.493907, 18.829109
+[20:54:50] [Render thread/INFO] (Minecraft) [System] [CHAT] Teleported Artus25200 to -2.074072, 177.493907, 18.264441
+[20:55:08] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:55:15] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:55:16] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:55:17] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:55:21] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:56:30] [Render thread/INFO] (Minecraft) [System] [CHAT] [Server: Teleported Artus25200 to 0.000000, 163.000000, 32.000000]
+[20:57:20] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:20] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.000000, 165.000000, 32.000000]
+[20:57:22] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.564236, 164.000000, 29.681993]
+[20:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:26] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 0.958133, 164.000000, 28.748128]
+[20:57:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:28] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 8.140415, 171.028896, 27.182575]
+[20:57:32] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:32] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 27.700000, 182.993235, 30.700000]
+[20:57:34] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:34] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 39.700000, 192.993235, 32.271798]
+[20:57:35] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:35] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 43.698094, 202.993235, 32.326560]
+[20:57:35] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:35] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 46.700000, 212.993235, 32.197538]
+[20:57:36] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:36] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 47.700000, 222.993235, 32.095649]
+[20:57:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 58.021814, 232.993235, 31.912408]
+[20:57:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:39] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 70.086031, 242.993235, 23.128649]
+[20:57:41] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:41] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 68.931495, 252.993235, 10.096614]
+[20:57:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:42] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 62.565927, 262.993235, 7.256667]
+[20:57:49] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:49] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 255.000000, -7.326029]
+[20:57:51] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 254.000000, -7.326029]
+[20:57:52] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:52] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 253.000000, -7.326029]
+[20:57:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:53] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 255.440455, -7.326029]
+[20:57:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:53] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 254.227051, -7.326029]
+[20:57:54] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:54] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 253.332933, -7.326029]
+[20:57:54] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:54] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 252.000000, -7.326029]
+[20:57:55] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:55] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 253.415646, -7.326029]
+[20:57:56] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:56] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 251.000000, -7.326029]
+[20:57:57] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:57] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 59.109436, 250.000000, -7.326029]
+[20:57:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:58] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 60.508203, 249.231524, -9.689558]
+[20:57:59] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:57:59] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 60.893061, 250.000000, -11.479237]
+[20:58:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:58:00] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 60.948387, 247.000000, -12.846429]
+[20:58:01] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:58:01] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 60.411124, 236.720910, -15.905784]
+[20:58:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Artus25200 broke a block
+[20:58:02] [Render thread/INFO] (Minecraft) [System] [CHAT] [Artus25200: Teleported Artus25200 to 60.234463, 236.000000, -15.300000]

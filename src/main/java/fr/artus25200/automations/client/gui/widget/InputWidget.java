@@ -48,15 +48,14 @@ public class InputWidget implements Renderable, NarratableEntry, GuiEventListene
 
 	@Override
 	public boolean isMouseOver(double mouseX, double mouseY) {
-		return mouseX >= this.x && mouseX <= this.x+5 && mouseY >= this.y && mouseY <= this.y + 5;
+		return mouseX >= this.x-1 && mouseX <= this.x+5+1 && mouseY >= this.y-1 && mouseY <= this.y + 5+1;
 	}
 
 	@Override
 	public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
 		double mouseX = event.x();
 		double mouseY = event.y();
-		int button = event.button();
-		if(isMouseOver(mouseX, mouseY) && button == InputConstants.MOUSE_BUTTON_RIGHT){
+		if(isMouseOver(mouseX, mouseY)){
 			this.connectionWidget.delete();
 			return true;
 		}

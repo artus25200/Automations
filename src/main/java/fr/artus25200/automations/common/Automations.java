@@ -31,7 +31,7 @@ public class Automations implements ModInitializer {
 		// the registry must be created during mod initialization, it is frozen afterwards
 		Nodes.registerNodes();
 
-		ServerLifecycleEvents.SERVER_STARTED.register((server)-> {
+		ServerLifecycleEvents.SERVER_STARTING.register((server)-> {
 			try {
 				AutomationsServer.onInitializeServer();
 			} catch (IOException e) {
